@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sitemap - Yehan Pathiratne</title>
+        <link rel="stylesheet" href="Global.css">
+        <style>
+            svg{
+                display:block;
+                margin:auto;
+            }
+
+            /*style group1 id*/
+            /*id for styles the rectangles*/
+            #group1 rect {
+                fill:#193c9c;
+                stroke:black;
+                stroke-width:3;
+            }
+
+            /*style for seperate boxes*/
+            /*apply hover effect to rectangle 1 under "group1" id*/
+            #group1RectHover1:hover rect{
+                fill:#0d205a;
+            }
+
+            /*apply hover effect to rectangle 2 under "group1" id*/
+            #group1RectHover2:hover rect{
+                fill:#0d205a;
+            }
+
+            /*apply styles for texts under group1 id*/
+            #group1 text{
+                fill:white;
+                font-size:20px;
+                text-anchor: middle;
+            }
+
+            /*style group2 id*/
+            /*id for styles the rectangles*/ 
+            #group2 rect{
+                fill:#3d5eb9;
+                stroke:black;
+                stroke-width:2;
+            }
+
+            /*style for seperate boxes*/
+            /*apply hover effect to rectangle 1 ( simulator ) under "group2" id*/
+            #group2RectHover1:hover rect{
+                fill:#122d66;
+            }
+
+            /*apply hover effect to rectangle 2 ( gallery ) under "group2" id*/
+            #group2RectHover2:hover rect{
+                fill:#122d66;
+            }
+
+            /*apply hover effect to rectangle 3 ( profile ) under "group2" id*/
+            #group2RectHover3:hover rect{
+                fill:#122d66;
+            }
+
+            /*apply hover effect to rectangle 4 ( feedback ) under "group2" id*/
+            #group2RectHover4:hover rect{
+                fill:#122d66;
+            }
+
+            /*apply hover effect to rectangle 5 ( team ) under "group2" id*/
+            #group2RectHover5:hover rect{
+                fill:#122d66;
+            }
+
+            /*apply styles for texts under group2 id*/
+            #group2 text{
+                fill:white;
+                font-size:19px;
+                text-anchor: middle;
+            }
+
+            #group3{
+                stroke:blue;
+                stroke-width:2;
+
+            }
+
+            /*style group4 id*/
+            /*id for styles the ellipse*/ 
+            #group4 ellipse{
+                fill:#297afd;
+                stroke:black;
+                stroke-width:1;
+            }
+
+            /*atyle for seperate ellipse*/
+            /*apply hover effect to ellipse1 ( content 1 ) under "group4" id*/
+            #group4EllipseHover1:hover ellipse{
+                fill:#144eac;
+            }
+
+            /*apply hover effect to ellipse2 ( content 2 ) under "group4" id*/
+            #group4EllipseHover2:hover ellipse{
+                fill:#144eac;
+            }
+
+            /*apply hover effect to ellipse3 ( content 3 ) under "group4" id*/
+            #group4EllipseHover3:hover ellipse{
+                fill:#144eac;
+            }
+
+            /*apply hover effect to ellipse ( content 4 ) under "group4" id*/
+            #group4EllipseHover4:hover ellipse{
+                fill:#144eac;
+            }
+
+            /*apply styles for texts under group4 id*/
+            #group4 text{
+                fill:white;
+                text-anchor:middle;
+                font-size:17px;
+            }
+
+            /*apply styles for line under group4 id*/
+            #group4 line{
+                stroke:blue;
+                stroke-width:2;
+            }
+
+            /*apply styles for circle under group4 id*/
+            #group4 circle{
+                fill:blue;
+            }
+
+
+            /*style group5 id*/
+            /*id for styles the utility boxes*/ 
+            #group5 rect{
+                fill:#3c387c;
+                stroke:black;
+                stroke-width:1;
+            }
+
+
+            /*apply styles for texts under group5 id*/
+            #group5 text{
+                fill:white;
+                font-size:15px;
+                text-anchor:middle;
+            }
+
+            /*apply styles for lines under group5 id*/
+            #group5 line{
+                stroke:blue;
+                stroke-width:2;
+            }
+
+            /*apply styles for circles under group5 id*/
+            #group5 circle{
+                fill:blue;
+            }
+
+            /*style the introduce boxes*/
+            /*apply styles for rectangles under group6 id*/
+            #group6 rect{
+                stroke:blue;
+                stroke-width:3;
+            }
+
+            /*apply styles for texts under group6 id*/
+            #group6 text{
+                fill:White;
+                text-anchor:middle;
+                font-size:15px;
+            }
+            
+            /*focus style*/
+            a:focus{
+                outline: 3px solid yellow;
+            }
+        </style>
+    </head>
+<body>
+    <header>
+        <nav class="nav">
+                        <div id="logo"><!--ID for logo-->
+                            <img src="images/logo.jpeg" width="75" height="70" alt="image"><!--Add the image--> 
+                            <span class="logo-text">Learn Scape</span> <!--Used span becaause of this wording is a inline thing--> </div>
+                            <input type="checkbox" id="menu-button"> <!--Hidden checkbox im using this to open and close the mobile navigation menu -->
+                            <label for="menu-button" class="menu-button">&#9776;</label> <!--Menu button-->
+                            <div class="navigation"> <!--navigation bar-->
+
+                                <a href="home.html">Home</a><!--Home Tab-->
+                                <a href="ais.html">Simulator</a><!--Simulator Tab-->
+                                <a href="gallery.html">Gallery</a><!--Gallery tab-->
+                                <a href="profile.html">Profile</a><!--Profile tab-->
+                                <a href="feedback.html">Feeback</a><!--Feedback tab-->
+                                <a href="team.html">Team</a>  <!--Team tab-->
+                                <a href="sitemap.html" class="active">SiteMap</a>  <!--Sitemap tab-->
+                            </div>
+                                   
+        </nav>
+    </header>
+    <br>
+
+    <main>
+        <svg width="80%" height="auto" viewBox="0 0 849 1000">    <!--create the SVG range-->
+            <rect width="100%" height="100%" fill="#DADADA"/><!--color the svg range-->
+            <text x="50%" y="30px" text-anchor="middle" fill="Black" font-size="30">SiteMap</text>
+
+            <!--This is group1 id for splash screen and home-->
+            <g id="group1"> 
+                <g id="group1RectHover1">
+                    <!--create Main pages-->
+                    <!--create splash screen box--> 
+                    <rect x="40%" y="50px" width="20%" height="30px" />
+                    <a href="splash.html" tabindex="0">
+                        <text x="50%" y="70px" text-anchor="middle">Splash Screen</text>
+                    </a>
+                </g>
+
+                <g id="group1RectHover2">
+                    <!--create Home box-->
+                    <rect x="40%" y="110px" width="20%" height="30px"/>
+                    <a href="home.html">
+                        <text x="50%" y="130" text-anchor="middle">Home</text>
+                    </a>
+                </g>
+            </g>
+
+            <!--create navigation tabs-->
+            <g id="group2">
+                <g id="group2RectHover1">
+                <!--Simulator tab-->
+                <circle cx="20%" cy="200" r="5" fill="blue"/>
+                <rect x="15%" y="200" width="10%" height="30"/>
+                <a href="ais.html">
+                    <text x="20%" y="220">Simulator</text>
+                </a>
+                </g>
+
+                <g id="group2RectHover2">
+                <!--Gallery tab-->
+                <circle cx="35%" cy="200" r="5" fill="blue"/>
+                <rect x="30%" y="200" width="10%" height="30"/>
+                <a href="gallery.html">
+                    <text x="35%" y="220">Gallery</text>
+                </a>
+                </g>
+
+                <g id="group2RectHover3">
+                <!--Profile tab-->
+                <circle cx="50%" cy="200" r="5" fill="blue"/>
+                <rect x="45%" y="200" width="10%" height="30"/>
+                <a href="profile.html">
+                    <text x="50%" y="220">Profile</text>
+                </a>
+                </g>
+
+                <g id="group2RectHover4">
+                <!--Feedback-->
+                <circle cx="65%" cy="200" r="5" fill="blue"/>
+                <rect x="60%" y="200" width="10%" height="30"/>
+                <a href="feedback.html">
+                    <text x="65%" y="220">Feedback</text>
+                </a>
+                </g>
+                
+                <g id="group2RectHover5">
+                <!--Team-->
+                <circle cx="80%" cy="200" r="5" fill="blue"/>
+                <rect x="75%" y="200" width="10%" height="30"/>
+                <a href="team.html">
+                    <text x="80%" y="220">Team</text>
+                </a>
+                </g>
+            </g>
+            
+            <g id="group3">
+            <!--create a line path between splash screen and home-->
+            <line x1="50%" y1="80px" x2="50%" y2="110px"/>
+            <polyline points="419.5 104, 424.5 109, 429.5 104" stroke="blue" stroke-width="2px" fill="transparent"/>
+            <!--create line path among home and others -->
+            <!--main horizontal line-->
+            <line x1="50%" y1="140" x2="50%" y2="170"/>
+            <line x1="5%" y1="170" x2="95%" y2="170"/>
+            <!--seperate verticle lines-->
+            <line x1="5%" y1="170" x2="5%" y2="460"/>    <!--line for content page tabs-->
+            <line x1="20%" y1="170" x2="20%" y2="200"/>  <!--line for Simulator tab-->
+            <line x1="35%" y1="170" x2="35%" y2="200"/>  <!--line for Gallery tab-->
+            <line x1="50%" y1="170" x2="50%" y2="200"/>  <!--line for Profile tab-->
+            <line x1="65%" y1="170" x2="65%" y2="200"/>  <!--line for Feedback tab-->
+            <line x1="80%" y1="170" x2="80%" y2="200"/>  <!--line for Team tab-->
+            <line x1="95%" y1="170" x2="95%" y2="490"/>  <!--line for footer content like page valdaton...-->
+            </g>
+
+            <!--Creating content pages tabs-->
+            <g id="group4">
+
+                <!--content page 1-->
+                <g id="group4EllipseHover1">
+                    <circle cx="12.60%" cy="280" r="5"/>
+                    <line x1="5%" y1="280" x2="13%" y2="280"/>
+                    <ellipse cx="20%" cy="280" rx="60" ry="20"/>
+                    <a href="content_ST1.html">
+                        <text x="20%" y="285">Content page 1</text>
+                    </a>
+                </g>
+
+                <!--content page 2-->
+                <g id="group4EllipseHover2">
+                    <circle cx="12.60%" cy="340" r="5"/>
+                    <line x1="5%" y1="340" x2="13%" y2="340"/>
+                    <ellipse cx="20%" cy="340" rx="60" ry="20"/>
+                    <a href="content_ST2.html">
+                        <text x="20%" y="345" >Content page 2</text>
+                    </a>
+                </g>
+
+                <!--content page 3-->
+                <g id="group4EllipseHover3">
+                    <circle cx="12.60%" cy="400" r="5"/>
+                    <line x1="5%" y1="400" x2="13%" y2="400"/>
+                    <ellipse cx="20%" cy="400" rx="60" ry="20"/>
+                    <a href="content_ST3.html">
+                        <text x="20%" y="405">Content page 3</text>
+                    </a>
+                </g>
+
+                <!--content page 4-->
+                <g id="group4EllipseHover4">
+                    <circle cx="12.60%" cy="460" r="5"/>
+                    <line x1="5%" y1="460" x2="13%" y2="460"/>
+                    <ellipse cx="20%" cy="460" rx="60" ry="20"/>
+                    <a href="content_ST4.html">
+                        <text x="20%" y="465"> Content page 4</text>
+                    </a>
+                </g>
+            </g>
+
+            <!--create utility pages-->
+            <g id="group5">
+                <!--page validation-->
+                <circle cx="80.20%" cy="310" r="5"/>
+                <line x1="80%" y1="310" x2="95%" y2="310"/>
+                <rect x="60%" y="290" rx="5" ry="5" width="20%" height="40"/>
+                <a href="validation_ST1.html">
+                    <text x="70%" y="315"> Page Validation</text>
+                </a>
+            
+                <!--page editor-->
+                <circle cx="80.20%" cy="400" r="5"/>
+                <line x1="80%" y1="400" x2="95%" y2="400"/>
+                <rect x="60%" y="380" rx="5" ry="5" width="20%" height="40"/>
+                <a href="pageEditor_ST1.html">
+                    <text x="70%" y="405">Page Editor</text>
+                </a>
+
+                <!--accessibility-->
+                <circle cx="80.20%" cy="490" r="5"/>
+                <line x1="80%" y1="490" x2="95%" y2="490"/>
+                <rect x="60%" y="470" rx="5" ry="5" width="20%" height="40"/>
+                <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/">
+                    <text x="70%" y="495">Accessibility</text>
+                </a>
+            </g>
+
+            <!--introduce boxes-->
+            <g id="group6">
+                <rect x="5%" y="600" rx="1" ry="1" width="15%" height="30" fill="#143180"/>
+                <text x="12.5%" y="620">Main Pages</text>
+
+                <rect x="23%" y="600" rx="1" ry="1" width="15%" height="30" fill="#3d5eb9"/>
+                <text x="31.5%" y="620">Navigation</text>
+
+                <rect x="41%" y="600" rx="1" ry="1" width="15%" height="30" fill="#297afd"/>
+                <text x="48.5%" y="620">Content Pages</text>
+
+                <rect x="59%" y="600" rx="1" ry="1" width="15%" height="30" fill="#3c387c"/>
+                <text x="66.5%" y="620">Utility Pages</text>
+            </g>
+
+            <!--create the svg image-->
+
+            <!--This is for making the out frame of the image-->
+            <rect x="30%" y="700" rx="5" ry="5" width="37%" height="200" fill="#6fb7e9" stroke="white" stroke-width="5"/>
+            <rect x="30%" y="700" rx="5" ry="5" width="3%" height="200" fill="#3f8ed0" stroke="white" stroke-width="2"/>
+            <rect x="64%" y="700" rx="5" ry="5" width="3%" height="200" fill="#3f8ed0" stroke="white" stroke-width="2"/>
+            
+            <!--making the crown-->
+            <path d="M 370 750 L 370 730 L 390 740 L 400 715 L 410 740 L 430 730 L 430 750 Z" fill="gold" stroke="white" stroke-width="2"/>
+            <circle cx="370" cy="729" r="3" fill="white"/>
+            <circle cx="400" cy="714" r="3" fill="white"/>
+            <circle cx="430" cy="729" r="3" fill="white"/>
+
+            <!--This is for making the book image part-->
+            <line x1="47%" y1="775" x2="47%" y2="865" stroke="#d9d9d9" stroke-width="2"/> <!--center line-->
+            <path d="M 400 865 L 325 835 L 325 745 L 400 775 z" fill="white" stroke="#6fb7e9" stroke-width="2"/><!--left part of book-->
+            <path d="M 400 865 L 475 835 L 475 745 L 400 775 z" fill="white" stroke="#6fb7e9" stroke-width="2"/><!--right part of book-->
+            <path d="M 320 742 L 320 837 L 400 870 L 480 837 L 480 742" fill="transparent" stroke="#d9d9d9" stroke-width="2"/><!--outer line of book-->
+
+            <!--This is for pen-->
+            <rect x="500" y="745" rx="5" ry="5" width="10" height="90" fill="white" stroke="white" />
+            <path d="M 500 830 L 505 845 L 510 830 z" fill="white"/>
+        </svg>
+        
+    </main>
+
+<footer id="Footer">
+      
+        <div class="footer-container">  <!--class creating for the div tags-->
+            <div class="footer-det"> <!--class creating for the div tags-->
+                <h4>Quick Link</h4> <!--h4 for the main headings-->
+                <br>
+                <a href="validation_ST4.html">Validation Page</a> 
+                <br>
+                <br>
+                <a href="pageEditor_ST4.html">Page Editor</a>
+                <br>
+                <br>
+                <p>Accessibilty</p>
+            </div>
+
+            <div class="footer-det">
+                <h4>Student Detalils</h4><!--h4 for the main headings-->
+                <br>
+                <p>Course : Web developement</p>
+                <br>
+                <br>
+                <p>University of WestMinster</p>
+                <br>
+                <br>
+                <p>Year 2026</p>
+            </div>
+
+            <div class="footer-det">
+                <h4>Compliance</h4><!--h4 for the main headings-->
+                <br>
+                <br>
+                <p>WCAG 2.1 AA Compliant</p>
+                <br>
+                <br>
+            <p>Accessible Design Standards</p> <!--p fo the description part-->
+            </div>
+            
+        </div>
+      
+        <br>
+        <br>
+        <hr> <!--horizontal line-->
+        <h5> copyright &copy; Group 6 Web Developent</h5>
+
+        
+
+    </footer>
+</body>
+
+
+
+</html>

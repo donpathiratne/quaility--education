@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Team page -Chathuni Dias</title>
+        <link rel="stylesheet" href="Global.css">
+        <style>
+
+            h2 {
+                text-align: center;  /*Center align text*/
+                margin: 20px 0;  /*Add space only to the top and bottom */
+                font-size: 30px;  /*Set font size*/
+            }
+
+            .team-members{
+                display:grid;  /*Grid layout*/
+                grid-template-columns: 1fr 1fr;  /*Creates 2 equal columns*/
+                gap: 50px;  /*Space between*/
+                padding:40px;  /*Inner spacing*/
+                align-items: start;  /*Align the items from top*/
+            }
+
+            .team-card{
+                display: flex;  /*Flex layout*/
+                flex-wrap: wrap;  /*Moves items to next line when needed*/    background: linear-gradient(to right, white, rgb(95, 212, 220));
+                align-items: center;  /*Center the items*/
+                justify-content: center;  /*Center the content*/
+                gap: 20px;
+                border-radius:20px;  /*Rounded corners*/
+                padding:15px;
+                box-shadow:0 4px 10px gray;  /*No left and right shadow, Shadow moves down 4px, 10px blur shadow*/
+                transition:transform 0.3s;  /*Makes transform changes smooth in 0.3 seconds*/
+                cursor:pointer;  /*Shows hand cursor on hover*/
+            }
+
+            .team-card:hover{
+                border-radius: 20px;
+                background-color: beige;
+                transform:scale(1.05);  /*Zoom the element*/
+            }
+
+            .team-card:focus{
+                border: 5px solid darkblue; /*Applies this border when the element is selected*/
+            }
+
+            .member-information{
+                flex: 1;  /*Text takes the remaining space*/
+            }
+
+            .team-card img{
+                border-radius: 2px;
+                width: 120px;
+                height: 140px;
+                object-fit: cover;  /*Fit image nicely*/
+            }
+
+            .member-details{
+                width: 100%;
+                flex-basis: 100%;  /*Takes the full row*/
+                max-height:0;
+                overflow:hidden;  /*Hide the overflow*/
+                margin-top:10px;
+                text-align: center;
+            }
+
+            .team-card:hover .member-details,
+            .team-card:focus .member-details{
+                max-height:200px;  /*Shows details on hover or focus*/
+            }
+
+
+        </style>
+    </head>
+<body>
+    <header>
+        <nav class="nav">
+                        <div id="logo"><!--ID for logo-->
+                            <img src="images/Logo.jpeg" width="75" height="70" alt="image of the logo"><!--Add the image--> 
+                            <span class="logo-text">Learn Scape</span> <!--Used span becaause of this wording is a inline thing--> </div>
+                            <input type="checkbox" id="menu-button"> <!--Hidden checkbox im using this to open and close the mobile navigation menu -->
+                            <label for="menu-button" class="menu-button">&#9776;</label> <!--Menu button-->
+                           
+                            <div class="navigation"> <!--navigation bar-->
+                                <a href="home.html">Home</a><!--Home Tab-->
+                                <a href="ais.html">Simulator</a><!--Simulator Tab-->
+                                <a href="gallery.html">Gallery</a><!--Gallery tab-->
+                                <a href="profile.html">Profile</a><!--Profile tab-->
+                                <a href="feedback.html">Feedback</a><!--Feedback tab-->
+                                <a href="#" class="active">Team</a>  <!--Team tab-->
+                                <a href="sitemap.html">SiteMap</a>  <!--Sitemap tab-->
+                            </div>
+                                   
+        </nav>
+               
+            
+
+    </header>
+
+    <main>
+        <h2><I>Our Team Members</I></h2>
+
+        <div class="team-members">
+        
+            <div class="team-card" tabindex="0">
+                    <img src="images/photoofsachithra.jpeg" alt="Photo of Sachithra - Home page & Gallery">
+
+                    <div class="member-information">
+                        <h3>Name: Sachithra</h3>
+                        <p><strong>Role: </strong>Shared template,Home page & Gallery</p>
+                    </div>
+
+                        <div class="member-details">
+                            <p><strong>Full Name: </strong>Sachithra Perera</p>
+                            <p><strong>Role: </strong>Student 01</p>
+                            <p><strong>Contributed Pages: </strong>Shared template,Home page & Gallery</p>
+                            <p>Designed the website template and developed the navigation bar for smooth user experience. Also created the home page layout and organized the gallery section.</p>
+                        </div>
+            </div>
+
+            <div class="team-card" tabindex="0">
+                    <img src="images/photoofshazan.jpeg" alt="Photo of Shazan - Splash Screen & Quiz">
+
+                    <div class="member-information">
+                        <h3>Name: Shazan</h3>
+                        <p><strong>Role: </strong>Splash Screen & Quiz</p>
+                    </div>
+
+                        <div class="member-details">
+                            <p><strong>Full Name: </strong>Mohamed Shazan</p>
+                            <p><strong>Role: </strong>Student 02</p>
+                            <p><strong>Contributed Pages: </strong>Splash Screen & Quiz</p>
+                            <p>Developed the Splash Screen and interactive SDG simulator with animations, countdown timer, and dynamic user feedback.</p>
+                        </div>
+            </div>
+
+            <div class="team-card" tabindex="0">
+                    <img src="images/photoofchathuni.jpeg" alt="Photo of Chathuni - Feedback & Team">
+
+                    <div class="member-information">
+                        <h3>Name: Chathuni</h3>
+                        <p><strong>Role: </strong>Feedback & Team</p>
+                    </div>
+
+                        <div class="member-details">
+                            <p><strong>Full Name: </strong>Chathuni Dias</p>
+                            <p><strong>Role: </strong>Student 03</p>
+                            <p><strong>Contributed Pages: </strong>Feedback & Team</p>
+                            <p>Created the Feedback & Program Directory and Team Page, including interactive forms, scrollable content, and responsive team member displays.</p>
+                        </div>
+            </div>
+
+            <div class="team-card" tabindex="0">
+                    <img src="images/photoofyehan.jpeg" alt="Photo of Yehan - User profile & SiteMap">
+
+                    <div class="member-information">
+                        <h3>Name: Yehan</h3>
+                        <p><strong>Role: </strong>User profile & SiteMap</p>
+                    </div>
+
+                        <div class="member-details">
+                            <p><strong>Full Name: </strong>Yehan Pathiratne</p>
+                            <p><strong>Role: </strong>Student 04</p>
+                            <p><strong>Contributed Pages: </strong>User profile & SiteMap</p>
+                            <p>Developed the User Profile and Sitemap pages, implementing JavaScript-based profile building, progress tracking, and an interactive SVG sitemap.</p>
+                        </div>
+            </div>
+        </div>
+    </main>
+    <br>
+<footer id="Footer">
+
+        <div class="footer-container"> <!--class creating for the div tags-->
+            <div class="footer-det"> <!--class creating for the div tags-->
+                <h4>Quick Link</h4> <!--h4 for the main headings-->
+                <br>
+                <a href="validation_ST3.html">Validation Page</a>
+                <br>
+                <br>
+                <a href="pageEditor_ST3.html">Page Editor</a>
+                <br>
+                <br>
+                <p>Accessbility</p>
+
+            </div>
+
+            <div class="footer-det">
+                <h4>Student Detalils</h4><!--h4 for the main headings-->
+                <br>
+                <p>Course : Web developement</p>
+                <br>
+                <br>
+                <p>University of WestMinster</p>
+                <br>
+                <br>
+                <p>Year 2026</p>
+            </div>
+
+            <div class="footer-det">
+                <h4>Compliance</h4><!--h4 for the main headings-->
+                <br>
+                <br>
+                <p>WCAG 2.1 AA Compliant</p>
+                <br>
+                <br>
+                <p>Accessible Design Standards</p> <!--p fo the description part-->
+            </div>
+
+        </div>
+
+        <br>
+        <br>
+        <hr> <!--horizontal line-->
+        <h5> copyright © Group 6 Web Developent</h5>
+
+    </footer>
+</body>
+
+
+
+</html>

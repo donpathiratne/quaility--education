@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home-page-Sachithra Perera</title>
+        <link rel="stylesheet" href="Global.css">
+        <style>
+            
+            .card{
+                transition: transform 0.3s ease;/*card*/
+            }
+            .content-box{/*content box */
+                transition: transform 0.3s ease;
+            }
+            .content-box:hover{
+                color: green;
+                transform: scale(1.1);
+                box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+            }
+            body{
+                background-image: url(images/original-0ae1b7b5ff3c1da9640b3d66f42e128a.gif);
+                background-position: 72%;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .text h1{
+                animation: softGlow 1s ease-in-out infinite alternate;
+            }
+ 
+            @keyframes softGlow{
+            from{
+                color: black;
+            }
+            to{
+                color: blue;
+            }
+            }
+        
+
+            
+
+            
+        </style>
+    </head>
+<body>
+    <header>
+        <nav class="nav">
+                        <div id="logo"><!--ID for logo-->
+                            <img src="images/Logo.jpeg" width="75" height="70" alt="image of the logo"><!--Add the image--> 
+                            <span class="logo-text">Learn Scape</span> <!--Used span becaause of this wording is a inline thing--> </div>
+                            <input type="checkbox" id="menu-button"> <!--Hidden checkbox im using this to open and close the mobile navigation menu -->
+                            <label for="menu-button" class="menu-button">&#9776;</label> <!--Menu button-->
+                            <div class="navigation"> <!--navigation bar-->
+
+                                <a href="#"class="active">Home</a><!--Home Tab-->
+                                <a href="ais.html">Simulator</a><!--Simulator Tab-->
+                                <a href="gallery.html">Gallery</a><!--Gallery tab-->
+                                <a href="profile.html" >Profile</a><!--Profile tab-->
+                                <a href="feedback.html">Feeback</a><!--Feedback tab-->
+                                <a href="team.html">Team</a>  <!--Team tab-->
+                                <a href="sitemap.html">SiteMap</a>  <!--Sitemap tab-->
+                            </div>
+                                   
+        </nav>
+    </header>   
+        <main>
+            <div class="home">
+                <div class="text">
+
+                <h1>Learning Today, Lead Tomorrow</h1>
+                <br>
+                    <h2>Mission & Goals</h2>
+                    <br>
+                    
+                    <div class="paragraph-head"> 
+                    <p>Today's education shapes tomorrow's lead ers. 
+                        By providing equal access to learning, knowledge sharing, and education, we empower
+                         individuals to build a better future for all.</p>
+                         <hr class="hr">
+                        <br>
+                        <br>
+
+                    </div>
+                </div>
+
+                    <section class="card-section"> <!--card section-->
+                                <div class="card"><!--Card-1-->
+
+                                    <img src="images/equaleducation.png" alt="quality-education-image">
+                                    <h3>Promote Equal Learning</h3>
+                    
+                                    <p>Education should be equal to everyone. So our target is to support all the student get the quality education they deserve
+                                    without considering in which background are they from.</p> <!--Card-1 description-->
+                                    
+
+                                    <h4>Highlights</h4>
+                                    <ul>
+                                        <li>Encourage equal access to education</li><!--card 1 unordered list--> 
+                                        <li>Support knowledge sharing amoung students</li>
+                                        <li>Promote inclusie learning envoirnments</li>
+                                    </ul>
+                                </div>
+
+                                <div class="card"><!--Card-2-->
+                                    <img src="images/sustainability.png" alt="sustainable-edu-image">
+                                    <h3>Sustainability Education</h3>
+                                    <p>
+                                        Sustainability education helps students understand global challenges and develop
+                                        responsible solutions. By integrating sustainable thinking into education,
+                                        students can become leaders who care for society and the environment.<!--Card-2 description-->
+                                    </p>
+                                    <h4>Highlights</h4>
+                                    <ul>
+                                        <li>Learn about sustainable development</li>
+                                        <li>Encourage responsible decision making</li><!--card 2 unordered list-->
+                                        <li>Build awareness of global challenges</li>
+                                    </ul>
+                                </div>
+
+                                <div class="card"><!--Card-1-->
+                                    <img src="images/develop_student_skill.png" alt="student-skill-developement">
+                                    <h3>Develop Student Skill</h3>
+                                    <p>
+                                        Developing student skills is essential for future success. Through education,
+                                        students build critical thinking, creativity, and leadership abilities that
+                                        help them solve problems and lead positive change.
+                                    </p>
+                                    <h4>Highlights</h4>
+                                    <ul>
+                                        <li>Improve critical thinking skills</li>
+                                        <li>Encourage creativity and innovation</li>
+                                        <li>Build leadership and teamwork abilities</li>
+                                    </ul>
+
+                                </div>
+                    </section>
+            </div>
+
+            <section class="content-pages"> <!--Content page section-->
+                <br>
+
+                <div class="heading_interactive"> <!--To do changes in the heading center tag-->
+                <h2>Interactive-gallery</h2>
+                </div>
+
+                <br>
+                <br> <!--line break-->
+            <div class="interactive-gallery-para">
+                <p>Explore our content pages and learn more about our initiatives</p>
+            </div>
+           
+
+            <div class="content">
+
+                <a href="content_ST1.html" class="content-box">
+                <div class="box-img">Content Page-1</div>
+                <img src="images/equaleducationopp.jpg" alt="Early-childhood-education" class="box-image-real">
+                <h3>Equal Education Opportunities </h3></a>
+
+                <a href="content_ST2.html" class="content-box">
+                <div class="box-img">Content Page-2</div>
+                <img src="images/technologyasimage.jpg" alt="technology in education" class="box-image-real">
+                <h3>Technology Transforming Education</h3></a>
+
+                <a href="content_ST3.html" class="content-box">
+                <div class="box-img">Content Page-3</div>
+                <img src="images/eduleaders.jpg" alt="Education in future leaders" class="box-image-real">
+                <h3>Education Bulids Future Leaders</h3></a>
+
+                <a href="content_ST4.html" class="content-box">
+                <div class="box-img">Content Page-4</div>
+                <img src="images/susedu.jpg" alt="Sustainability in future" class="box-image-real">
+                <h3>Lifelong Learning for a Sustainable Future</h3></a>
+
+            </div>
+
+            </section>
+
+            
+        </main>
+               
+            
+
+    
+    <br>
+    <footer id="Footer">
+      
+        <div class="footer-container">  <!--class creating for the div tags-->
+            <div class="footer-det"> <!--class creating for the div tags-->
+                <h4>Quick Link</h4> <!--h4 for the main headings-->
+                <br>
+                <a href="validation_ST1.html">Validation Page</a> 
+                <br>
+                <br>
+                <a href="pageEditor_ST1.html">Page Editor</a>
+                <br>
+                <br>
+                <p>Accessibility</p>
+
+            </div>
+
+            <div class="footer-det">
+                <h4>Student Detalils</h4><!--h4 for the main headings-->
+                <br>
+                <p>Course : Web developement</p>
+                <br>
+                <br>
+                <p>University of WestMinster</p>
+                <br>
+                <br>
+                <p>Year 2026</p>
+            </div>
+
+            <div class="footer-det">
+                <h4>Compliance</h4><!--h4 for the main headings-->
+                <br>
+                <br>
+                <p>WCAG 2.1 AA Compliant</p>
+                <br>
+                <br>
+            <p>Accessible Design Standards</p> <!--p fo the description part-->
+            </div>
+            
+        </div>
+      
+        <br>
+        <br>
+        <hr> <!--horizontal line-->
+        <h5> copyright &copy; Group 6 Web Developent</h5>
+
+        
+
+    </footer>
+</body>
+
+
+
+</html>   

@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profile - Yehan Pathiratne</title>
+        <link rel="stylesheet" href="Global.css">
+        <style>
+            /*add style for h1 tag*/
+            h1{
+                text-align:center;
+                color:rgb(4, 4, 80);
+            }
+
+            /*add style for h2 tag*/
+            h2{
+                color:blue;
+                text-align:center;
+            }
+
+            /*make a class for h3 tag, because this class uses for some h3 tags*/
+            .h3Class{
+                text-align:center;
+                background-color:rgb(106, 197, 240);
+            }
+
+            /*This class for make cards*/
+            /*this card1 class for main card*/
+            .card1{
+                border:2px solid black;
+                background-color:rgb(241, 229, 229);
+                margin:20px 200px;
+                padding:10px;
+                
+            }
+
+            /*only add styles for paragraphs under card1 class*/
+            .card1 p{
+                text-align:center;
+                font-size:20px;
+            }
+
+            /*card2 class uses for user details boxes*/
+            .card2{
+                border:2px solid black;
+                margin:5px;
+                background-color:rgb(205, 227, 236);
+            }
+
+            /*this for styling tables under card2*/
+            .card2 table{
+                margin: auto;
+            }
+
+            /*this for styling tables' data under card2*/
+            .card2 td{
+                padding:2px 10px;
+            }
+
+            /*style the question topics under card2 table data*/
+            .card2 td:first-child{
+                text-align:right;
+            }
+
+            /*style the user answers under card2 table data*/
+            .card2 td:last-child{
+                text-align:left;
+            }
+
+            /*this class uses for center the content in rows*/
+            .rowCenter{
+                text-align:center;
+            }
+
+            /*style the start button*/
+            .startBTN{
+                background-color:rgb(53, 53, 248);
+                color:white;
+                border:1px solid black;
+                font-size:25px;
+                padding:10px 30px;
+                border-radius:3px;
+            }
+
+            /*hover effect for start button*/
+            .startBTN:hover{
+                background-color:rgb(22, 22, 87);
+            }
+
+            /*naormally add text styles*/
+            .textStyle{
+                font-weight:bold;
+                font-size:20px;
+            }
+
+            /*This is for completion bar - this bar is constant*/
+            .progressContainer{
+                width:40%;
+                height:20px;
+                background-color:rgb(212, 211, 211);
+                margin-left:30%;
+            }
+
+            /*This is for completion bar - this bar is changable*/
+            #completionBar{
+                height:100%;
+                width:0%;
+                background-color:blue;
+            }
+
+            /*this class for both reset and continue button*/
+            .resetContinueButton{
+                padding:5px 8px;
+                color:black;
+                background-color:rgb(212, 206, 206);
+                border:1px solid black;
+                font-weight:bold;
+                font-size:18px;
+            }
+
+            /*hover effect for reset and continue button*/
+            .resetContinueButton:hover{
+                background-color:rgb(189, 187, 187);
+            }
+
+            /*this class for reset and continue buttons*/
+            .resetContinueRow{
+                margin-left:40%;
+            }
+            
+            /*this class for revisit buttons*/
+            .revisitButton{
+                margin-left:20px;
+                font-size:15px;
+            }
+
+            /*hide content*/
+            .buttonDisplay{
+                display:none;
+            }
+            
+            /*show content cards one by one none to block*/
+            .cardDisplay{
+                display:none;
+            }
+
+            /*content od=f the confirm part*/
+            .confirmationMsg{
+                color:rgb(92, 92, 112);
+                text-align:center;
+            }
+
+        </style>
+    </head>
+<body>
+    <header>
+        <nav class="nav">
+                        <div id="logo"><!--ID for logo-->
+                            <img src="images/logo.jpeg" width="75" height="70" alt="image"><!--Add the image--> 
+                            <span class="logo-text">Learn Scape</span> <!--Used span becaause of this wording is a inline thing--> </div>
+                            <input type="checkbox" id="menu-button"> <!--Hidden checkbox im using this to open and close the mobile navigation menu -->
+                            <label for="menu-button" class="menu-button">&#9776;</label> <!--Menu button-->
+                            <div class="navigation"> <!--navigation bar-->
+
+                                <a href="home.html">Home</a><!--Home Tab-->
+                                <a href="ais.html">Simulator</a><!--Simulator Tab-->
+                                <a href="gallery.html">Gallery</a><!--Gallery tab-->
+                                <a href="#" class="active">Profile</a><!--Profile tab-->
+                                <a href="feedback.html">Feeback</a><!--Feedback tab-->
+                                <a href="team.html">Team</a>  <!--Team tab-->
+                                <a href="sitemap.html">SiteMap</a>  <!--Sitemap tab-->
+                            </div>
+                                   
+        </nav>
+    </header>
+    
+    <main>
+        <br>
+        <h1>- - - User Profile - - -</h1>
+        <br>
+
+        <!--This division for first box-->
+        <div class="card1">
+
+            <div>
+                <h2>Progressive User Profile</h2><br>
+                <p>You can complete steps in order, skip question, and revisit steps later to enrich your profile</p>
+                <br><br>
+            </div>
+
+            <!--This is for start button-->
+            <div class="rowCenter">
+                <button class="startBTN" id="startButton">Start</button>
+                <br><br><br>
+            </div>
+
+            <!--This is for completion part-->
+            <div>
+                <div class="rowCenter">
+                    <div>
+                        <!--completion part-->
+                        <span class="textStyle">Completion :</span>
+                        <span id="completion">0</span>  <!-- this value is changable-->
+                        <span>%</span>
+                    </div>
+                    <br>
+
+                    <!--counting prompts-->
+                    <div>
+                        <!--counting prompts-->
+                        <span id="countPrompts">0</span> <!-- this value is changable-->
+                        <span>/10 completed</span>
+                    </div>
+                    <br>
+
+                </div>
+                
+                <div>
+                    <!--completion bar-->
+                    <div class="progressContainer">
+                        <div id="completionBar"></div>   <!--This range is changable-->
+                    </div>
+                    <br>
+                    
+                    <!--reset button-->
+                    <div class="resetContinueRow">
+                        <button class="resetContinueButton" id="resetBtn">Reset Profile</button> 
+                        <button class="resetContinueButton" id="continueBtn">Continue</button>
+                        
+                    </div>
+                </div>
+                <br><br>
+            </div>
+
+            <!--revisit buttons-->
+            <div class="buttonDisplay" id="revisitbtns">
+                <button class="revisitButton" id="revisit1">Revisit step 1</button>
+                <button class="revisitButton" id="revisit2">Revisit step 2</button>
+                <button class="revisitButton" id="revisit3">Revisit step 3</button>
+            </div>  
+        </div>
+
+        <!--Questions ids that ask from user-->
+        <div class="card1">
+            <div class="cardDisplay"> <!--this is for hide the cards-->
+                <div class="card2">
+                    <h3 class="h3Class">Basic Details</h3><br>
+                    <table>
+                        <tr>  
+                            <td><span id="question1"></span></td>
+                            <td><span id="answer1"></span></td>
+                        </tr>
+                        <tr>  
+                            <td><span id="question2"></span></td>
+                            <td><span id="answer2"></span></td>
+                        </tr>
+                        <tr>  
+                            <td><span id="question3"></span></td>
+                            <td><span id="answer3"></span></td>
+                        </tr>
+                        <tr>  
+                            <td><span id="question4"></span></td>
+                            <td><span id="answer4"></span></td>
+                        </tr>
+                    </table><br>   
+                </div>
+            </div>
+                    <div class="cardDisplay">   <!--this is for hide the cards-->
+                        <div class="card2">
+                            <h3 class="h3Class">Interests</h3><br>
+                            <table>
+                                <tr>  
+                                    <td><span id="question5"></span></td>
+                                    <td><span id="answer5"></span></td>
+                                </tr>                             
+                                <tr>  
+                                    <td><span id="question6"></span></td>
+                                    <td><span id="answer6"></span></td>
+                                </tr>
+                                <tr>  
+                                    <td><span id="question7"></span></td>
+                                    <td><span id="answer7"></span></td>
+                                </tr>
+                            </table><br>
+                        </div>
+                    </div>
+
+            <div class="cardDisplay"> <!--this is for hide the cards-->
+                <div class="card2">
+                    <h3 class="h3Class">Actions</h3><br>
+                    <table>
+                        <tr>  
+                            <td><span id="question8"></span></td>
+                            <td><span id="answer8"></span></td>
+                        </tr>
+                        <tr>  
+                            <td><span id="question9"></span></td>
+                            <td><span id="answer9"></span></td>
+                        </tr>
+                        <tr>  
+                            <td><span id="question10"></span></td>
+                            <td><span id="answer10"></span></td>
+                        </tr>
+                    </table><br>
+                </div>   
+            </div>
+        </div>
+
+        <div class="card1">
+            <h3>Confirmation</h3>
+            <br>
+            <div class="confirmationMsg">
+                <span id="confirmation">When you complete all steps, you will see a confirmation message here.</span> <!--This text is changable-->
+            </div>
+        </div>
+
+        <script>
+            
+            // create variables for get user answers in order
+            let name            = null; // answer1
+            let role            = null; // answer2
+            let username        = null; // answer3
+            let area            = null; // answer4
+            let mainStudy       = null; // answer5
+            let preferContent   = null; // answer6
+            let weeklyTime      = null; // answer7
+            let action          = null; // answer8
+            let goal            = null; // answer9
+            let commitment      = null; // answer10
+
+            // get user answer to the array - index 0 to 9 - array length 10 
+            let dataArray=[null, null, null, null, null, null, null, null, null, null];
+            
+            // Basic details function
+            function basicDetails(){
+                name=prompt("step 1/3 - Basic deatails\n\nWhat is your full name?\n(Leave blank or Cancel to skip) ");     //  question 1
+                if(name)
+                {
+                    document.getElementById("question1").innerHTML="<b>Name :</b>"; // find the place which related to id and type question at related position
+                    document.getElementById("answer1").textContent=name;            // find the position using id and type answer related position
+                }
+                else
+                {
+                    document.getElementById("question1").innerHTML=""; // blank
+                    document.getElementById("answer1").textContent="";
+                }
+                dataArray[0]=name;  // store the answer in data array index 0
+                updateProgress();   // call the function to calculate completing counts
+
+
+                role=prompt("step 1/3 - Basic deatails\n\nEnter your role(student/teacher...).\n(Press cancel to skip))"); //  question 2
+                if(role)
+                {
+                    document.getElementById("question2").innerHTML="<b>Role :</b>"; // find the place which related to id and type question at related position 
+                    document.getElementById("answer2").textContent=role;            // find the position using id and type answer related position
+                }
+                else
+                {
+                    document.getElementById("question2").innerHTML="";  // blank
+                    document.getElementById("answer2").textContent="";  // blank
+                }
+                dataArray[1]=role;  // store the answer in data array index 1
+                updateProgress();   // call the function to calculate completing counts   
+                
+                username=prompt("step 1/3 - Basic deatails\n\nEnter an username for your profile.\n(Press cancel to skip)");//  question 3 
+                if(username)
+                {   
+                document.getElementById("question3").innerHTML="<b>Username:</b>";  // find the place which related to id and type question at related position 
+                document.getElementById("answer3").textContent=username;            // find the position using id and type answer related position
+                }
+                else
+                {
+                    document.getElementById("question3").innerHTML="";  // blank 
+                    document.getElementById("answer3").textContent="";  // blank
+                }
+                dataArray[2]=username;  // store the answer in data array index 2
+                updateProgress();       // call the function to calculate completing counts 
+
+                area=prompt("step 1/3 - Basic deatails\n\nEnetr your location(city/country).\n(Press cancel to skip)");     //  question 4
+                if(area)
+                {
+                    document.getElementById("question4").innerHTML="<b>Location :</b>"; // find the place which related to id and type question at related position 
+                    document.getElementById("answer4").textContent=area;                // find the position using id and type answer related position
+                }
+                else
+                {
+                    document.getElementById("question4").innerHTML="";  // blank 
+                    document.getElementById("answer4").textContent="";  // blank 
+                }
+                dataArray[3]=area;      // store the answer in data array index 3       
+                updateProgress();       // call the function to calculate completing counts 
+            }
+
+            // Interests function
+            function interestsDetails(){
+                mainStudy=prompt("step 2/3 - Interests\n\nWhat is your main area of study or learning interest?\n(e.g:- Computer Science, Arts, Health )\n(Leave blank or Cancel to skip) "); // question 5
+                if(mainStudy)
+                {
+                document.getElementById("question5").innerHTML="<b>Main Field:</b>";        // find the place which related to id and type question at related position 
+                document.getElementById("answer5").textContent=mainStudy;                   // find the position using id and type answer related position    
+                }
+                else
+                {
+                    document.getElementById("question5").innerHTML="";  // blank
+                    document.getElementById("answer5").textContent="";  // blank  
+                }             
+                dataArray[4]=mainStudy;     // store the answer in data array index 4  
+                updateProgress();           // call the function to calculate completing counts 
+
+                preferContent=prompt("step 2/3 - Interests\n\nHow do you prefer to learn?\n(e.g:- Videos, hands-on, discussions)\n(Press cancel to skip))"); // question 6
+                if(preferContent){
+                document.getElementById("question6").innerHTML="<b>Prefer Content:</b>";    // find the place which related to id and type question at related position     
+                document.getElementById("answer6").textContent=preferContent;               // find the position using id and type answer related position
+                }
+                else
+                {
+                    document.getElementById("question6").innerHTML="";  // blank
+                    document.getElementById("answer6").textContent="";  // blank  
+                } 
+                dataArray[5]=preferContent; // store the answer in data array index 5  
+                updateProgress();           // call the function to calculate completing counts 
+                
+                weeklyTime=prompt("step 2/3 - Interests\n\nApproximately how many hours per week do you dedicate to learning?\n(Press cancel to skip)");    // question 7
+                if(weeklyTime)
+                {
+                    document.getElementById("question7").innerHTML="<b>Weekly Time:</b>";       // find the place which related to id and type question at related position 
+                    document.getElementById("answer7").textContent=weeklyTime;                  // find the position using id and type answer related position
+                }
+                else
+                {
+                    document.getElementById("question7").innerHTML="";  // blank
+                    document.getElementById("answer7").textContent="";  // blank  
+                } 
+                
+                dataArray[6]=weeklyTime;    // store the answer in data array index 6  
+                updateProgress();           // call the function to calculate completing counts 
+            }
+
+            // Actions Details function
+            function actionsDetails(){
+                action=prompt("step 3/3 - Actions\n\nWhich action do you already support or want to start:\n(e.g:-tutoring others, donating books, supporting literacy campaigns)\n(Leave blank or Cancel to skip) ");  // question 8 
+                if(action)
+                {
+                    document.getElementById("question8").innerHTML="<b>SDG Action:</b>";  // find the place which related to id and type question at related position 
+                    document.getElementById("answer8").textContent=action;                // find the position using id and type answer related position
+                }
+                else
+                {
+                    document.getElementById("question8").innerHTML="";  // blank
+                    document.getElementById("answer8").textContent="";  // blank  
+                }
+                dataArray[7]=action;        // store the answer in data array index 7
+                updateProgress();           // call the function to calculate completing counts 
+
+                goal=prompt("step 3/3 - Actions\n\nWhat is your main education goal for this year:\n(Press cancel to skip))");  // question 9
+                if(goal)
+                {
+                    document.getElementById("question9").innerHTML="<b>Goal:</b>";        // find the place which related to id and type question at related position 
+                    document.getElementById("answer9").textContent=goal;                  // find the position using id and type answer related position
+                }
+                else
+                {
+                    document.getElementById("question9").innerHTML="";  // blank
+                    document.getElementById("answer9").textContent="";  // blank  
+                }
+                dataArray[8]=goal;          // store the answer in data array index 8
+                updateProgress();           // call the function to calculate completing counts 
+                
+                commitment=prompt("step 3/3 - Actions\n\ngive one commitment you will make to support quality education:\n(Press cancel to skip)"); // question 10 
+                if(commitment)
+                {
+                    document.getElementById("question10").innerHTML="<b>Commitment:</b>"; // find the place which related to id and type question at related position 
+                    document.getElementById("answer10").textContent=commitment;           // find the position using id and type answer related position
+                }
+                else
+                {
+                    document.getElementById("question10").innerHTML="";  // blank
+                    document.getElementById("answer10").textContent="";  // blank  
+                }
+
+                
+                dataArray[9]=commitment;    // store the answer in data array index 9
+                updateProgress();           // call the function to calculate completing counts 
+
+            }
+
+            // confirmation for front steps 
+            // this function use when click the start button
+            function userConfirmFunc(){
+                return confirm(steps[stepIndex]+"\n\nContinue to next step..."); // get ture or false
+            }
+
+            // step Complete Counter
+            let stepsCount=0; // create a variable to store values in steps
+            let stepIndex=0;  // create a variable to store indexes
+            let steps = ["step 1 of 3 completed.","step 2 of 3 completed.","step 3 of 3 completed."];
+
+
+
+            // function for reset button
+            function resetBtnFunc()
+            {
+                // reset variables 
+                // all variables are made as null
+                name = role = username = area = null;          
+                mainStudy = preferContent = weeklyTime  = null;   
+                action = goal = commitment = null;  
+                
+                // reset array
+                dataArray = new Array(10).fill(null); // dataArray contains null type values 
+
+                // clear displayed answers
+                for(let a=1; a<=10; a++) // loop for 10 times
+                {
+                    document.getElementById("answer" + a).textContent = "";     // answer will erase
+                    document.getElementById("question" + a).textContent = "";   // question will erase
+                }
+
+                // reset progress text
+                document.getElementById("completion").textContent="0";          // erase percentage value
+                document.getElementById("countPrompts").textContent="0";        // erase the prompts count
+
+                // to disapper cards
+                let displayCard=document.getElementsByClassName("cardDisplay"); 
+                for(let c=0;c<displayCard.length;c++)
+                {
+                    displayCard[c].style.display = "none";  // erase one by one cards
+                }
+
+                //reset progress container
+                let completionBox = document.getElementById("completionBar");
+                completionBox.style.width="0%";
+
+                // reset confirmation msg
+                document.getElementById("confirmation").textContent="When you complete all steps, you will see a confirmation message here.";
+
+                // reset revisit buttons
+                document.getElementById("revisitbtns").style.display="none"; // hide the revisit buttons
+            }
+
+
+            // continue function
+            function continueFunc(){
+                let cardDisplay=document.getElementsByClassName("cardDisplay"); // find the html elements under class and store them in variable
+
+                while(true){
+                    let i = dataArray.indexOf(null);    // find null value index
+
+                    if(i === -1)        // no more null values
+                    {
+                        alert("All steps completed.");
+                        return;
+                    }
+
+                    if(i<4)
+                    {
+                        basicDetails();     // call the first question block 
+                        cardDisplay[0].style.display="block";  // show the basic details part
+                    } 
+                
+                    else if(i<7)
+                    {
+                        interestsDetails(); // call the second question block
+                        cardDisplay[1].style.display="block";   // show the interests details part
+                    }
+
+                    else
+                    {
+                        actionsDetails();   // call the third question block
+                        cardDisplay[2].style.display="block";   // show the action deatails part
+                    }  
+                }      
+            }
+
+            // completion progress function
+            function updateProgress(){
+                let count=0;
+                
+                for(let b=0; b<dataArray.length; b++)
+                {
+                    if(dataArray[b]!== null && dataArray[b] !== ""){ // get not null values empty values
+                    count++;
+                    }
+                }
+                // progress 
+                let progress=count*10; // manually count the percentage 
+                document.getElementById("completion").textContent=progress; //find the place which related to id and type progress value
+                document.getElementById("countPrompts").textContent=count;  //find the place which related to id and type count value
+
+                // color bar
+                let completionBox = document.getElementById("completionBar"); // find the elements under completionBar id and store in variable
+                completionBox.style.width=progress+"%"; // make the width according to the progress value
+                
+                // confirmation msg
+                if(count==10)
+                {
+                    document.getElementById("confirmation").innerHTML="You have successfully completed.<br><br>Thank You !!!";
+                }
+            }
+
+            
+            // this is for start button to create as clickable.
+            document.getElementById("startButton").addEventListener("click", function() //when click the start button, run this code
+            {
+                let cardDisplay=document.getElementsByClassName("cardDisplay"); // find all elemeants under "cardDisplay" class and store in variable
+
+                basicDetails();                       // call the function
+                cardDisplay[0].style.display="block"; // 1st card will appear
+                document.getElementById("revisitbtns").style.display = "block"; // revisit buttons will appear
+                stepIndex=0;    // stepIndex update
+                let step1=userConfirmFunc();          // call the userConfirmFunc function and save the data in step1 variable as boolean value
+                if(step1) // if true
+                {
+                    interestsDetails();                     // call 2nd Interest card using interestsDetails function
+                    cardDisplay[1].style.display="block";   // 2nd card will appear
+                    stepIndex=1;    // stepIndex update 
+                    let step2=userConfirmFunc();            // call the userConfirmFunc function and save the data in step2 variable as boolean value
+                    if(step2) // if true
+                    {   
+                        actionsDetails();                      // call 3rd Action card using  actionsDetails method 
+                        stepIndex=2;    // stepIndex update
+                        cardDisplay[2].style.display="block";  // 3rd card will appear   
+                    }
+                    
+                }
+
+            });
+  
+            // continue part
+            document.getElementById("continueBtn").addEventListener("click", function() //when click the continue button, run this code
+            {
+                continueFunc(); // call the function
+            });
+
+
+            // resetbutton part
+            document.getElementById("resetBtn").addEventListener("click",function()     //when click the reset button, run this code
+            {
+                resetBtnFunc(); // call the function
+            });
+
+            // revist step 1
+            document.getElementById("revisit1").addEventListener("click", function()    //when click the revisit1 button, run this code
+            {
+
+                basicDetails(); // call the first block part
+            });
+             
+            // revisit step 2
+            document.getElementById("revisit2").addEventListener("click", function()
+            {
+                interestsDetails(); // call the second block part
+            });
+
+            // revisit step 3
+            document.getElementById("revisit3").addEventListener("click", function()
+            {
+                actionsDetails();   // call the third block part
+            });
+
+        </script>
+    </main>
+
+<footer id="Footer">
+      
+        <div class="footer-container">  <!--class creating for the div tags-->
+            <div class="footer-det"> <!--class creating for the div tags-->
+                <h4>Quick Link</h4> <!--h4 for the main headings-->
+                <br>
+                <a href="validation_ST4.html">Validation Page</a> 
+                <br>
+                <br>
+                <a href="pageEditor_ST4.html">Page Editor</a>
+                <br>
+                <br>
+                <p>Accessibilty</p>
+            </div>
+
+            <div class="footer-det">
+                <h4>Student Detalils</h4><!--h4 for the main headings-->
+                <br>
+                <p>Course : Web developement</p>
+                <br>
+                <br>
+                <p>University of WestMinster</p>
+                <br>
+                <br>
+                <p>Year 2026</p>
+            </div>
+
+            <div class="footer-det">
+                <h4>Compliance</h4><!--h4 for the main headings-->
+                <br>
+                <br>
+                <p>WCAG 2.1 AA Compliant</p>
+                <br>
+                <br>
+            <p>Accessible Design Standards</p> <!--p fo the description part-->
+            </div>
+            
+        </div>
+      
+        <br>
+        <br>
+        <hr> <!--horizontal line-->
+        <h5> copyright &copy; Group 6 Web Developent</h5>
+
+        
+
+    </footer>
+</body>
+</html>

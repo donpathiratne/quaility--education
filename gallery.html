@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gallery Page Student-Sachithra Perera</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.1/dist/css/glide.core.min.css"><!--glide.js CSS file-->
+        
+        <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.1/dist/glide.min.js"></script><!--linking to the glide.js-->
+        
+        <link rel="stylesheet" href="Global.css">
+        
+        <style>
+            body{
+                background-color: #E2E8F0;
+            }
+            .gallery-h2{/*gallery heading*/
+                text-align: center;
+                font-size: large;
+            }
+            .gallery-para{/* Main-paragraph */
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 35px;
+                font-size: large;
+            }
+            .glide_slides{/*ul tag*/
+                display: flex;
+                gap: 20px; /* space between images */
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                justify-content:space-around;
+            }
+
+            .image{
+                overflow:hidden;
+                height: 280px;
+                
+
+            }
+            .image img {
+                width: 100%; /* adjust as you like */
+                height: 100%;
+                cursor: pointer;
+                transition: transform 0.4s ease;
+           
+            }
+            .image img:hover{
+                transform: scale(1.2);
+            }
+          
+            .slot{/*main class for the expand button,name,image*/
+                height: 400px;
+                border: 2px solid black;
+                border-radius: 3px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            }
+            .para{/*class paragraph*/
+                padding: 10px;
+                position: absolute;
+                bottom: 24px;
+                text-align: center;
+                font-size: 20px;
+
+            }
+            #btn1,#btn2,#btn3,#btn4{/*button ID*/
+                border-radius: 3px;
+                padding: 5px 10px;
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 17px;
+                text-align: center;
+                background-color: blueviolet;
+                color: #E2E8F0;
+                  
+            }
+            #extended-container{/*Extended*/
+                padding: 20px;
+                background-color:lightblue;
+                height: auto;
+                margin: 20px;
+                position: absolute;
+                width: 95vw;
+                z-index: 10;
+                display: none;
+            }
+            #extended-container1{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;   
+            }
+            .text-view,.pic-view{/*exapned area */
+                height: 300px;
+            }
+            #text-child-1,#text-child-2,#text-child-3,#text-child-4{/*to make text part invisible for the normal html view*/
+                display: none;   
+            }
+            h3{
+                padding-bottom: 10px;
+                
+            }
+            .image-ex{/*expanded part image size*/
+                width:700px;
+                height: 300px;
+                display: none;
+            }
+            #close-btn{/*close button for the expanded area*/
+                position: absolute;
+                top:1px;
+                right: 6px;
+                padding: 8px 14px;
+                border: 2px solid black;
+                background-color: red;
+                color: white;
+                cursor: pointer;
+                border-radius: 10px;
+            }
+            #para1,#para2,#para3,#para4{/*paragraph in expanded part*/
+                line-height: 1.6;
+                font-size: 18px;
+            }
+            #text1,#text2,#text3,#text4{/*heading tags in expanded part*/
+                font-size: 23px;
+            }
+            .glide{
+                padding: 20px;
+                overflow: hidden;
+            }
+            .glide_slides{
+                display: grid;
+                grid-template-columns:repeat(4,1fr);
+                list-style-type: none;
+                gap: 10px;
+
+            }
+            .glide_slide{
+                display: inline;    
+            }
+            .glide_slides .glide-active{/*this is working when*/
+                display: flex;
+            }
+
+        </style>
+    </head>
+<body>
+    <header>
+        <nav class="nav">
+                        <div id="logo"><!--ID for logo-->
+                            <img src="images/Logo.jpeg" width="75" height="70" alt="image of the logo"><!--Add the image--> 
+                            <span class="logo-text">Learn Scape</span> <!--Used span becaause of this wording is a inline thing--> </div>
+                            <input type="checkbox" id="menu-button"> <!--Hidden checkbox im using this to open and close the mobile navigation menu -->
+                            <label for="menu-button" class="menu-button">&#9776;</label> <!--Menu button-->
+                            <div class="navigation"> <!--navigation bar-->
+
+                                <a href="home.html">Home</a><!--Home Tab-->
+                                <a href="ais.html">Simulator</a><!--Simulator Tab-->
+                                <a href="#" class="active">Gallery</a><!--Gallery tab-->
+                                <a href="profile.html" >Profile</a><!--Profile tab-->
+                                <a href="feedback.html">Feeback</a><!--Feedback tab-->
+                                <a href="team.html">Team</a>  <!--Team tab-->
+                                <a href="sitemap.html">SiteMap</a>  <!--Sitemap tab-->
+                            </div>
+                                   
+        </nav>
+        </header>
+        <main>
+            <!--Gallery-->
+            <div class="gallery-h2">
+                <h2>Education Gallery</h2><!--Gallery heading -->
+            </div>
+            <div class="gallery-para">
+                <p>Explore images showcasing our educational initiatives and impact</p><!--Gallery paragrapgh-->
+            </div>
+
+            <!--Extended-->
+        <div id="extended-container">
+            <div id="extended-container1">
+                <div class="pic-view" id="pic-view">
+                </div>
+                <div class="text-view" id="text-view">
+                    
+                </div>
+            </div>
+            <!--closing button for extended-->  
+            <button id="close-btn">x</button>
+            <!--Color theme and font -->
+            <div class="customize-view">
+                <h3>Customize View</h3>
+
+                <label for="fontstyle">Font Style</label><!--for the font changes in the expand view-->
+                <select id="fontstyle">
+                    <option value=" 'Times New Roman', Times, serif">Default Font</option>
+                    <option value="Tahoma, sans-serif">Tahoma</option>
+                    <option value="'Courier New', monospace">monospace</option>
+                </select>
+
+                <label for="color-scheme">Color Scheme</label><!--for the color changes in the expand view-->
+                <select id="color-scheme">
+                    <option value="default">Default Theme</option>
+                    <option value="dark">Dark Theme</option>
+                    <option value="blue">Blue Theme</option>
+                </select>
+            </div>
+                
+        </div>
+
+        <div id="text-child-1">
+            <h3 id="text1">Breaking Barries To Education</h3>
+            <p id="para1">This image represents the importance of making education accessible to everyone,
+                 regardless of <br>location, gender, income, or background. 
+                 It highlights the need to remove barriers that prevent children 
+                  and communities from receiving quality education and shows how inclusive learning
+                   can create equal opportunities for a better future.</p>
+
+        </div>
+
+        <div id="text-child-2">
+            <h3 id="text2">Digital Learning & Smart Classrooms</h3>
+            <p id="para2">This image shows how technology is transforming education in the modern world.
+                 Through digital devices, online learning platforms, and smart classrooms, students are able to
+                  access knowledge in more flexible, interactive, and engaging ways. It reflects the 
+                growing role of innovation in improving both teaching and learning experiences.</p>
+
+        </div>
+
+        <div id="text-child-3">
+            <h3 id="text3">Students As Future Leaders</h3>
+            <p id="para3">This image highlights the role of education in shaping confident, responsible, 
+                and capable future leaders. Through collaboration, discussion, presentations, and leadership 
+                activities, students develop important skills such as communication, teamwork, and critical thinking.
+                 It reflects how learning environments can inspire young people to lead with confidence.</p>
+
+        </div>
+
+        <div id="text-child-4">
+            <h3 id="text4">Lifelong Learning Journey</h3>
+            <p id="para4">This image represents the belief that learning continues throughout every stage of life. 
+                It highlights the importance of ongoing education, skill development, and self-improvement for people 
+                of all ages. The image reflects how 
+                lifelong learning supports personal growth, adaptability, and success in an ever-changing world.</p>
+
+        </div>
+            
+
+
+
+            <!--These 4 images will work on the expanded version-->
+            <img src="images/barriestobreeaineducation.jpg"  alt="image_of_barries_to _break_in_education" class="image-ex" id="image-i">
+            <img src="images/smartclassroom.png" alt="iamge_of_smart_classroom" class="image-ex" id="image-ii">
+            <img src="images/studentasfutureleader.webp" alt="iamge_of_studentasfuture_leaders" class="image-ex" id="image-iii">
+            <img src="images/life_long_learning_journey.jpg" alt="image_of_life_long_learning_journey" class="image-ex" id="image-iv">
+        
+
+            <!--Glider part and the html-->
+            <div class="glide"><!--main glider class-->
+                <div class="glide_track" data-glide-el="track"> <!--structure identification-->
+                    <ul class="glide_slides"><!--parent class-->
+                        <li class="glide_slide"><!--child class-->
+                            <div class="slot">
+                                <div class="slot-container">
+                                    <button id="btn1">Expand</button><!--expand button-->
+                                </div>
+                                <div class="image">
+                                    <img src="images/barriestobreeaineducation.jpg" alt="image_of_barries_to _break_in_education"><!--this image work in the normal view-->
+                                </div>
+                                <div class="para">
+                                    <p><b>Breaking Barries To Education</b></p><!--this paragraph work below the image in the normal view-->
+                                </div>
+                            </div>  
+                        </li>
+                        <li class="glide_slide"><!--child class-->
+                            <div class="slot">
+                                <div class="slot-container">
+                                    <button id="btn2">Expand</button><!--expand button-->
+                                </div>
+                                <div class="image">
+                                    <img src="images/smartclassroom.png" alt="iamge_of_smart_classroom"><!--this image work in the normal view-->
+                                </div>
+                                <div class="para">
+                                    <p><b>Digital Learning & Smart Classrooms</b></p><!--this paragraph work below the image in the normal view-->
+                                </div>
+                            </div>  
+                        </li>
+                        <li class="glide_slide"><!--child class-->
+                            <div class="slot">
+                                <div class="slot-container">
+                                    <button id="btn3">Expand</button><!--expand button-->
+                                </div>
+                                <div class="image">
+                                    <img src="images/studentasfutureleader.webp" alt="iamge_of_studentasfuture_leaders"><!--this image work in the normal view-->
+                                </div>
+                                <div class="para">
+                                    <p><b>Students As Future Leaders</b></p><!--this paragraph work below the image in the normal view-->
+                                </div>
+                            </div>  
+                        </li>
+                        <li class="glide_slide"><!--child class-->
+                            <div class="slot">
+                                <div class="slot-container">
+                                    <button id="btn4">Expand</button><!--expand button-->
+                                </div>
+                                <div class="image">
+                                    <img src="images/life_long_learning_journey.jpg" alt="image_of_life_long_learning_journey"><!--this image work in the normal view-->
+                                </div>
+                                <div class="para">
+                                    <p><b>Lifelong Learning Journey</b></p><!--this paragraph work below the image in the normal view-->
+                                </div>
+                            </div>  
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </main>
+               
+            
+
+    
+    <br>
+    <footer id="Footer">
+  <div class="footer-container">  <!--class creating for the div tags-->
+            <div class="footer-det"> <!--class creating for the div tags-->
+                <h4>Quick Link</h4> <!--h4 for the main headings-->
+                <br>
+                <a href="validation_ST1.html">Validation Page</a> 
+                <br>
+                <br>
+                <a href="pageEditor_ST1.html">Page Editor</a>
+                <br>
+                <br>
+                <p>Accessibility</p>
+            </div>
+
+            <div class="footer-det">
+                <h4>Student Detalils</h4><!--h4 for the main headings-->
+                <br>
+                <p>Course : Web developement</p>
+                <br>
+                <br>
+                <p>University of WestMinster</p>
+                <br>
+                <br>
+                <p>Year 2026</p>
+            </div>
+
+            <div class="footer-det">
+                <h4>Compliance</h4><!--h4 for the main headings-->
+                <br>
+                <br>
+                <p>WCAG 2.1 AA Compliant</p>
+                <br>
+                <br>
+            <p>Accessible Design Standards</p> <!--p fo the description part-->
+            </div>
+            
+        </div>
+      
+        <br>
+        <br>
+        <hr> <!--horizontal line-->
+        <h5> copyright © Group 6 Web Developent</h5>
+
+
+        
+
+    </footer>
+    <script>
+        let picParent=document.getElementById('pic-view');//pic-view-inextended
+        let textParent=document.getElementById('text-view');//text-view-inextended
+        let scr1=document.getElementById('extended-container');//extended-container
+        let scr1Extended=document.getElementById('extended-container1');//extended-container
+        let btn1 =document.getElementById('btn1');//initialize button
+        let btn2 =document.getElementById('btn2');//initialize button
+        let btn3 =document.getElementById('btn3');//initialize button
+        let btn4 =document.getElementById('btn4');//initialize button
+        
+        let textChil1=document.getElementById("text-child-1");//initializetext part heading and paragraph
+        let textChil2=document.getElementById("text-child-2");//initializetext part heading and paragraph
+        let textChil3=document.getElementById("text-child-3");//initializetext part heading and paragraph
+        let textChil4=document.getElementById("text-child-4");//initializetext part heading and paragraph
+
+       
+        let imagei=document.getElementById('image-i');//image1
+        
+        btn1.addEventListener('click',function(){
+            scr1.style.display="block";//allowing scr1 to visible in expanded part            
+            clearChildren(textParent);//clearing the text
+            clearChildrenIMG(picParent);//clareing the image
+            imagei.style.display = "block";//dispalying the image on the extended part
+            textChil1.style.display="block";//dispalying the text on the extended part
+
+            textParent.appendChild(textChil1);           
+            picParent.appendChild(imagei);
+
+        });
+        
+        let imageii=document.getElementById('image-ii');//image2
+        
+
+        btn2.addEventListener('click',function(){
+            scr1.style.display="block";//allowing scr1 to visible in expanded part
+            clearChildren(textParent);//clearing the text
+            clearChildrenIMG(picParent);//clareing the image           
+            imageii.style.display = "block";//dispalying the image on the extended part
+            textChil2.style.display="block";//dispalying the text on the extended part
+           
+            textParent.appendChild(textChil2);            
+            picParent.appendChild(imageii);
+           
+        });
+        
+        let imageiii=document.getElementById('image-iii');//image3
+        
+        btn3.addEventListener('click',function(){
+            scr1.style.display="block";//allowing scr1 to visible in expanded part
+            clearChildren(textParent);//clearing the text
+            clearChildrenIMG(picParent);//clareing the image          
+            imageiii.style.display = "block";//dispalying the image on the extended part
+            textChil3.style.display="block";//dispalying the text on the extended part
+           
+            textParent.appendChild(textChil3);            
+            picParent.appendChild(imageiii);
+        });
+       
+        let imageiv=document.getElementById('image-iv');//image2
+        
+        
+
+        btn4.addEventListener('click',function(){
+            scr1.style.display="block";//allowing scr1 to visible in expanded part
+            clearChildren(textParent);//clearing the text
+            clearChildrenIMG(picParent);//clareing the image             
+            imageiv.style.display = "block";//dispalying the image on the extended part
+            textChil4.style.display="block";//dispalying the text on the extended part
+           
+            textParent.appendChild(textChil4);            
+            picParent.appendChild(imageiv);
+        });
+        let closeBtn = document.getElementById('close-btn'); //close-button
+        closeBtn.addEventListener('click', function(){
+        scr1.style.display = "none";
+        });
+
+        let fontStyle =document.getElementById('fontstyle');//fontstyle
+        let colorScheme =document.getElementById('color-scheme');//color-theme
+
+        fontStyle.addEventListener('change',function(){
+            textParent.style.fontFamily=fontStyle.value;
+        });
+        colorScheme.addEventListener('change',function(){//color-theme
+            if(colorScheme.value == "default"){
+                scr1.style.backgroundColor="lightblue";
+                scr1.style.color="black";
+            }
+            else if(colorScheme.value=="dark"){
+                scr1.style.backgroundColor="#222";
+                scr1.style.color = "white";
+            }
+            else if(colorScheme.value=="blue"){
+                scr1.style.backgroundColor="#dbeafe";
+                scr1.style.color="#1e3a8a";
+            }
+        });
+
+        function clearChildren(element) {//clear the image 
+            while (element.firstChild) {
+                element.removeChild(element.firstChild);
+            }
+        }
+        function clearChildrenIMG(element1) {
+            while (element1.firstChild) {
+                element1.removeChild(element1.firstChild);
+            }
+        }
+        let image=document.getElementById('.image img');
+        image.forEach(function(img){
+            img.addEventListener('mouseover',function(){
+                img.style.transform='scale(1.2)';
+            });
+            img.addEventListener('mouseout',function(){
+                img.style.transform='scale(1)';
+            });
+
+        });
+
+
+    </script>
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+        if(typeof Glide !== "undefined"){
+            document.body.classList.add("glide-active");
+
+                    new Glide('.glide', {//clone
+                    type: 'slider',
+                    perView: 2,          // change to 2 or 3 for multiple visible slides
+                    gap: 20,
+                    autoplay: 3000,      // auto-slide every 3 seconds
+                    hoverpause: true     // pause autoplay on hover
+                    }).mount();//method which intialize the eventlistner
+                    }
+                });
+    </script>
+</body>
+
+
+
+</html>   

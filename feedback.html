@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Feedbackpage -Chathuni Dias</title>
+        <link rel="stylesheet" href="Global.css">
+        <style>
+            /* Main Heading */
+            h2 {
+                text-align: center;  /*Center align text*/
+                margin: 20px 0;  /*Add space only to the top and bottom */
+                font-size: 30px;  /*Set font size*/
+            }
+
+            /* Dropdown */
+            .dropdown {
+                text-align: left;  /*Align text to left*/
+                margin-left: 50px;   /*Space from left*/
+                margin-right: 900px;  /*Large space from right*/
+            }
+
+            /*Dropdown select box*/
+            .filter-dropdown {
+                padding: 8px 12px;  /*Spacing inside the select box*/
+                border-radius: 5px;  /*Rounded corners*/
+                border: 1px solid #ccc;  /*Border thickness, border type and color*/
+            }
+
+            /*Containerd for program cards*/
+            .information-cards {
+                display: flex;  /*Makes the container a flexbox to arrange items in a flexible layout*/
+                gap: 15px;  /*Space between cards*/
+                overflow-x: auto;   /*Enable horizontal scroll*/
+                padding: 15px;  
+            }
+
+            .card.information {
+                flex: 0 0 33%;  /*Will not grow, Will not shrink and takes each card 33% width*/
+                background: #ffffff;
+                border-radius: 10px;
+                overflow: hidden;  /*Hides content that exceeds the container size*/
+            }
+
+            .card.information:hover {
+                transform: scale(1.025); /*Slightly enlarges the program card*/ 
+            }
+
+            /*Program card image*/
+            .card img {
+                width: 100%;  /*Makes the element take full width of its container*/
+                height: 250px;  /*Fixed the image height*/
+                object-fit: cover;  /*Fit image nicely*/
+            }
+
+            /*Text of the program card*/
+            .information-details {
+                padding: 15px;
+            }
+
+            .information-details h3 {
+                margin: 10px 0;
+            }
+
+            .information-details p {
+                font-size: 14px;
+                color: #555;
+            }
+
+            /*Program card button*/
+            .information-details button {
+                font-size: 20px;
+                font-style: oblique;
+                margin-top: 10px;  /*Keep space from above*/
+                padding: 8px 12px;  /*Keep 8px space from top and bottom, Keep 12px space from left and right*/
+                border: none;  /*Remove the border*/
+                background: #3498db;
+                color: white;
+                border-radius: 5px;
+                cursor: pointer;  /*Shows hand cursor on hover*/
+            }
+
+            /*Program card button hover*/
+            .information-details button:hover {
+                background: #2980b9;
+                transform: scale(1.05);  /*Slightly zoom the button*/
+            }
+
+            /*Rating Session*/
+            .rating-summary {
+                text-align: center;
+                width: 300px;
+                padding: 20px;
+                background: powderblue;
+                border-radius: 60%;
+                border: 3px solid #0056b3;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);  /*No left and right shadow, Shadow moves down 4px, 10px blur shadow*/
+                margin: 30px auto;
+            }
+
+            .rating-summary h2 {
+                font-size: 32px;
+                color: #2c3e50;
+            }
+
+            .rating-summary span {
+                color: darkgreen;
+                font-size: 20px;
+            }
+
+            .rating-summary p {
+                color: darkslateblue;
+            }   
+
+            .reviews-container {
+                display: flex;
+                flex-wrap: wrap;  /*Wrap to next line*/
+                gap: 20px;
+                justify-content: center;  /*Center align*/
+            }
+
+            /* Card style */
+            .card.review {
+                width: 280px;
+                background: #ffffff;
+                padding: 18px;
+                border-radius: 10px;
+                border: 4px groove #030929;  /*Use 3D styled border*/
+                box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+                transition: 0.3s;
+            }
+
+            .card.review:hover {
+                transform: translateY(-5px);  /*Moves the element upword*/
+            }
+
+            .card.review h3 {
+                margin-bottom: 10px;  /*Space below*/  
+                color: brown;
+            }
+
+            /* Description */
+            .card.review p {
+                font-size: 14px;
+                color: #555;
+                line-height: 1.5;
+            }
+
+            /*Links in review cards*/
+            .card.review a {
+                color: #3498db;
+                text-decoration: none;  /*Remove underline*/
+                font-weight: bold;
+            }
+
+            /* Footer */
+            .review-footer {
+                margin-top: 12px;
+                font-size: 13px;
+                color: #666;
+            }
+
+            .review-footer span {
+                font-weight: bold;
+                color: #000;
+            }
+
+            /* Form section */
+            #feedbackForm {
+                max-width: 600px;
+                margin: 20px auto;  /*20px top and bottom margin, Automatically centers the element horizontally*/
+                padding: 20px;
+                background: lightblue;
+                border-radius: 10px;
+            }
+
+            fieldset {
+                border: 1px solid #ccc;
+                padding: 15px;
+                margin-bottom: 15px;
+                border-radius: 8px;
+            }
+
+            label {
+                display: block;  /*Makes element take full width and start on new line*/
+                margin-top: 10px;
+                font-weight: bold;
+            }
+
+            /*Inputs of the form*/
+            input, textarea, select {
+                width: 100%;
+                padding: 8px;
+                margin-top: 5px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            /* Textarea */
+            textarea {
+                resize: none;  /*Prevents resizing of the element*/
+            }
+
+            /*Submit button*/
+            button {
+                width: 100%;
+                padding: 10px;
+                background: #007BFF;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                margin-top: 10px;
+                cursor: pointer;  /*Shows hand cursor on hover*/
+            }
+
+            button:hover {
+                background: #0056b3;
+            }
+
+            /*Character counter*/
+            #charCount {
+                font-size: 13px;
+                color: gray;
+            }
+
+            /*Success or Error message*/
+            #formMessage {
+                text-align: center;
+                margin-top: 10px;
+                font-weight: bold;
+            }
+            
+        </style>
+    </head>
+<body>
+    <header>
+        <nav class="nav">
+                        <div id="logo"><!--ID for logo-->
+                            <img src="images/Logo.jpeg" width="75" height="70" alt="image of the logo"><!--Add the image--> 
+                            <span class="logo-text">Learn Scape</span> <!--Used span becaause of this wording is a inline thing--> </div>
+                            <input type="checkbox" id="menu-button"> <!--Hidden checkbox im using this to open and close the mobile navigation menu -->
+                            <label for="menu-button" class="menu-button">&#9776;</label> <!--Menu button-->
+                            <div class="navigation"> <!--navigation bar-->
+
+                               <a href="home.html">Home</a><!--Home Tab-->
+                                <a href="ais.html">Simulator</a><!--Simulator Tab-->
+                                <a href="gallery.html">Gallery</a><!--Gallery tab-->
+                                <a href="profile.html">Profile</a><!--Profile tab-->
+                                <a href="#" class="active">Feedback</a><!--Feedback tab-->
+                                <a href="team.html">Team</a>  <!--Team tab-->
+                                <a href="sitemap.html">SiteMap</a>  <!--Sitemap tab-->
+                            </div>
+                                   
+        </nav>
+               
+            
+
+    </header>
+
+    <main>
+        <h2><I>Expand Your Knowledge</I></h2>
+
+            <div class="dropdown">
+                <select class="filter-dropdown">
+                    <option>Best for Beginners</option>
+                    <option>Top Rated</option>
+                    <option>Newest</option>
+                    <option>Online Only</option>
+                    <option>Advance Level</option>
+                </select>
+            </div>
+
+            <div class="information-cards">
+                <div class="card information">
+                    <img src="images/mentorship.jpg" alt="mentorship programs">
+                        <div class="information-details">
+                            <h3>Mentorship Program</h3>
+                            <p>Receive expert guidance and meaningful support from mentors who inspire you to improve academically, grow personally, and reach your full potential with confidence and determination.</p>
+                            <button>Join Now</button>
+                        </div>
+                </div>
+
+                <div class="card information">
+                    <img src="images/learningresources.jpg" alt="learning resources">
+                        <div class="information-details">
+                            <h3>Free Learning Resources</h3>
+                            <p>Utilize freely available educational content such as digital books, structured courses, and academic tools to enhance your skills and academic performance.</p>
+                            <button>View Resources</button>
+                        </div>
+                </div>
+
+                <div class="card information">
+                    <img src="images/workshop.jpg" alt="workshops">
+                        <div class="information-details">
+                            <h3>Skill Development Workshops</h3>
+                            <p>Enhance your personal and professional abilities through structured training sessions focused on critical thinking, teamwork, and effective communication.</p>
+                            <button>Explore Workshops</button>
+                        </div>
+                </div>
+
+                <div class="card information">
+                    <img src="images/digitalskills.jpg" alt="digital skills">
+                        <div class="information-details">
+                            <h3>Master Digital Skills</h3>
+                            <p>Develop key digital competencies including information literacy, online communication, and safe internet practices to succeed in academic and professional settings.</p>
+                            <button>Start Learning</button>
+                        </div>
+                </div>
+
+                <div class="card information">
+                    <img src="images/certifications.jpg" alt="certifications">
+                        <div class="information-details">
+                            <h3>Learn & Get Certified</h3>
+                            <p>Join structured courses that offer industry-recognized certifications, helping you build credibility and advance in both academic and professional paths.</p>
+                            <button>Discover More</button>
+                        </div>
+                </div>
+
+                <div class="card information">
+                    <img src="images/apps.jpg" alt="learning apps">
+                        <div class="information-details">
+                            <h3>Smart Learning Apps</h3>
+                            <p>Stay connected to your education with mobile apps that make learning convenient, engaging, and accessible whenever you need it.</p>
+                            <button>Get App</button>
+                        </div>
+                </div>
+            </div>
+
+            <div class="card rating-summary">
+                <h2>8.9/10 <span>Excellent</span></h2>
+                <p><B><I>Based on 1,250 Student Reviews</I></B></p>
+            </div>
+
+            <div class="reviews-container">
+                <div class="card review">
+                    <h3>Improved My Confidence</h3>
+                    <p>
+                        This program greatly improved my confidence in both communication and teamwork. The activities were interactive, practical, and really enjoyable.
+                        <a href="#">See More</a>
+                    </p>
+                    
+                    <div class="review-footer">
+                        <p>Reviewer: <span>Dinuli Fernando</span></p>
+                        <p>Date: <span>12 March 2026</span></p>
+                        <p>Rating: <span>★★★★☆ 9/10</span></p>
+                    </div>
+                </div>
+
+                <div class="card review">
+                    <h3>Easy & Interactive Learning</h3>
+                    <p>
+                        The platform was well-designed and easy to access. Learning felt fun thanks to the interactive features.
+                        <a href="#">See More</a>
+                    </p>
+                    
+                    <div class="review-footer">
+                        <p>Reviewer: <span>Kavindu Silva</span></p>
+                        <p>Date: <span>5 February 2026</span></p>
+                        <p>Rating: <span>★★★★☆ 8.7/10</span></p>
+                    </div>
+                </div>
+
+                <div class="card review">
+                    <h3>Helpful for My Future</h3>
+                    <p>
+                        I gained valuable knowledge and certificates that will definitely help me in my career journey.
+                         <a href="#">See More</a>
+                    </p>
+                    
+                    <div class="review-footer">
+                        <p>Reviewer: <span>Tharindu Jayasuriya</span></p>
+                        <p>Date: <span>29 January 2026</span></p>
+                        <p>Rating: <span>★★★★☆ 9.4/10</span></p>
+                    </div>
+                </div>
+            
+                <div class="card review">
+                    <h3>Equal opportunities for all</h3>
+                    <p>
+                        I love how this program supports students from different backgrounds. It makes learning accessible to all.
+                        <a href="#">See More</a>
+                    </p>
+                    
+                    <div class="review-footer">
+                        <p>Reviewer: <span>Ishini Wickramasingha</span></p>
+                        <p>Date: <span>2 March 2026</span></p>
+                        <p>Rating: <span>★★★★☆ 8.8/10</span></p>
+                    </div>
+                </div>
+            
+                <div class="card review">
+                    <h3>Excellent Teaching Methods</h3>
+                    <p>
+                        The teaching style was simple and interactive. Real-life examples helped me understand the topics better.
+                        <a href="#">See More</a>
+                    </p>
+                    
+                    <div class="review-footer">
+                        <p>Reviewer: <span>Kaveesha Jayawardena</span></p>
+                        <p>Date: <span>18 January 2026</span></p>
+                        <p>Rating: <span>★★★★☆ 9.1/10</span></p>
+                    </div>
+                </div>
+
+                <div class="card review">
+                    <h3>Study Anytime, Anywhere</h3>
+                    <p>
+                        I could study whenever I had time. This flexibility really helped me balance school and personal life.
+                        <a href="#">See More</a>
+                    </p>
+                    
+                    <div class="review-footer">
+                        <p>Reviewer: <span>Sachini Wijesingha</span></p>
+                        <p>Date: <span>16 February 2026</span></p>
+                        <p>Rating: <span>★★★★☆ 9.3/10</span></p>
+                    </div>
+                </div>
+            </div>
+
+        <h2>Give Your Feedback</h2>
+
+            <form id="feedbackForm">
+
+                <fieldset>
+                    <legend>Personal Details</legend>
+
+                        <label>Full Name</label>
+                        <input type="text" id="name" required>
+
+                        <label>Email</label>
+                        <input type="email" id="email" required>
+
+                        <label>Phone</label>
+                        <input type="tel" id="phone" required>
+
+                        <label>Address</label>
+                        <textarea id="address" required></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Feedback Details</legend>
+
+                        <label>Program</label>
+                            <select id="program">
+                                <option value="">Select</option>
+                                    <option>Workshops</option>
+                                    <option>Online Courses</option>
+                                    <option>Training</option>
+                            </select>
+
+                        <label>Date</label>
+                        <input type="date">
+
+                        <label>Time</label>
+                        <input type="datetime-local">
+
+                        <label>Message</label>
+                        <textarea id="message" maxlength="150"></textarea>
+                        <p id="charCount">150 characters remaining</p>
+                </fieldset>
+
+                    <button type="submit">Submit</button>
+                    <p id="formMessage"></p>
+
+            </form>
+            
+    </main>
+
+    <br>
+<footer id="Footer">
+
+        <div class="footer-container"> <!--class creating for the div tags-->
+            <div class="footer-det"> <!--class creating for the div tags-->
+                <h4>Quick Link</h4> <!--h4 for the main headings-->
+                <br>
+                <a href="validation_ST3.html">Validation Page</a>
+                <br>
+                <br>
+                <a href="pageEditor_ST3.html">Page Editor</a>
+                <br>
+                <br>
+                <p>Accessbility</p>
+
+            </div>
+
+            <div class="footer-det">
+                <h4>Student Detalils</h4><!--h4 for the main headings-->
+                <br>
+                <p>Course : Web developement</p>
+                <br>
+                <br>
+                <p>University of WestMinster</p>
+                <br>
+                <br>
+                <p>Year 2026</p>
+            </div>
+
+            <div class="footer-det">
+                <h4>Compliance</h4><!--h4 for the main headings-->
+                <br>
+                <br>
+                <p>WCAG 2.1 AA Compliant</p>
+                <br>
+                <br>
+                <p>Accessible Design Standards</p> <!--p fo the description part-->
+            </div>
+
+        </div>
+
+        <br>
+        <br>
+        <hr> <!--horizontal line-->
+        <h5> copyright © Group 6 Web Developent</h5>
+
+    </footer>
+
+    <script>
+        
+        let message = document.getElementById("message");
+        let charCount = document.getElementById("charCount");
+        let form = document.getElementById("feedbackForm");
+        let formMessage = document.getElementById("formMessage");
+
+// Character counter
+        message.oninput = function() {
+        let remaining = 150 - message.value.length;
+        charCount.textContent = remaining + " characters remaining";
+    };
+
+// Form submit
+        form.onsubmit = function(e) {
+        e.preventDefault();
+
+        formMessage.textContent = "";
+
+        let name = document.getElementById("name");
+        let email = document.getElementById("email");
+        let phone = document.getElementById("phone");
+
+    // Simple validation
+        if (name.value === "") {
+            formMessage.textContent = "Enter your name";
+        return;
+    }
+
+        if (!email.value.includes("@")) {
+            formMessage.textContent = "Enter valid email";
+        return;
+    }
+
+        if (phone.value.length < 10) {
+            formMessage.textContent = "Enter valid phone number";
+        return;
+    }
+
+    // Success message
+        formMessage.textContent = "Thank you for your feedback!";
+        form.reset();
+        charCount.textContent = "150 characters remaining";
+    };
+
+    </script>
+
+</body>
+
+
+
+</html>

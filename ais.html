@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action Impact Simulator - Mohamed Shazan</title>
+
+    <!-- connecting the shared team CSS file -->
+    <link rel="stylesheet" href="Global.css">
+
+
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1600');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .background-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(19, 28, 79, 0.78);
+            z-index: 0;
+        }
+
+        .page-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-title {
+            text-align: center;
+            padding: 30px 20px 10px 20px;
+            color: #fbfbfb;
+        }
+
+        .page-title h1 {
+            margin-bottom: 20px;
+            font-size: 40px
+        }
+
+        .instruction {
+            color: #fdeeee;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .cards-container {
+            display: flex;
+            /* put cards side by side */
+            flex-wrap: wrap;
+            /* move to next line if no space */
+            justify-content: center;
+            /* center the cards */
+            padding: 10px 20px;
+            gap: 20px;
+            /* space between each card */
+        }
+
+        /*styles for cards*/
+        .action-card {
+            background-color: white;
+            border: 2px solid lightgrey;
+            border-radius: 10px;
+            width: 280px;
+            /*fixed width for each card*/
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            /*cursor shows when we hover over*/
+            transition: border 0.3s;
+            /*smoother border change on click*/
+            box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /*styles for image*/
+        .action-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            /*crop image to fit without stretching*/
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .action-card h3 {
+            font-size: 16px;
+            color: #030929;
+            margin-bottom: 8px;
+        }
+
+        .action-card p {
+            font-size: 13px;
+            color: #555555;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        /*style for impact badge*/
+        .point-batch {
+            display: inline-block;
+            background-color: #030929;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /*selected card style after selecting*/
+        .action-card.selected {
+            border: 2px solid #030929;
+            background-color: #fffbe6;
+        }
+
+        /*feedback box*/
+        .feedback-box {
+            background-color: rgb(197, 235, 248);
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+            border: 2px solid #030929;
+            text-align: center;
+        }
+
+        /*score number*/
+        .score-number {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #030929;
+        }
+
+        /*impact level*/
+        .impact-level {
+            font-size: 18px;
+            font-weight: bold;
+            ;
+            color: #030929;
+            margin-bottom: 10px;
+        }
+
+        /*impact message*/
+        .impact-message {
+            font-size: 14px;
+            color: #555555;
+            margin-top: 8px;
+        }
+
+        /*reset button*/
+        .reset-button {
+            margin: 20px auto;
+            display: block;
+            padding: 10px 20px;
+            background-color: rgb(197, 235, 248);
+            color: #030929;
+            border: 2px solid #030929;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /*reset button hover effect*/
+        .reset-button:hover {
+            background-color: #030929;
+            color: white;
+            border: 2px solid white;
+            transition: all 0.3s;
+        }
+
+        /*mobile responsiveness*/
+        @media (max-width: 768px) {
+            .action-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--background image-->
+    <div class="background-overlay"></div>
+    <div class="page-wrapper">
+
+        <header>
+            <nav class="nav">
+                <div id="logo"><!--ID for logo-->
+                    <img src="images/Logo.jpeg" width="75" height="70"
+                        alt="image"><!--Add the image-->
+                    <span class="logo-text">Learn Scape</span>
+                    <!--Used span becaause of this wording is a inline thing-->
+                </div>
+                <input type="checkbox" id="menu-button">
+                <!--Hidden checkbox im using this to open and close the mobile navigation menu -->
+                <label for="menu-button" class="menu-button">&#9776;</label> <!--Menu button-->
+                <div class="navigation"> <!--navigation bar-->
+
+                    <a href="home.html">Home</a><!--home tab-->
+                    <a href="ais.html" class="active">Simulator</a><!--simulator tab-->
+                    <a href="gallery.html">Gallery</a><!--Gallery tab-->
+                    <a href="profile.html">Profile</a><!--profile tab-->
+                    <a href="feedback.html">Feeback</a><!--feedback tab-->
+                    <a href="team.html">Team</a> <!--team tab-->
+                    <a href="sitemap.html">SiteMap</a> <!--sitemap tab-->
+
+                </div>
+
+            </nav>
+
+
+
+        </header>
+        <br>
+
+        <main>
+
+
+            <!-- page heading as action impact simulator-->
+            <div class="page-title">
+
+                <h1>Action Impact Simulator</h1>
+
+                <p class="instruction">Click on the actions below that you take or would like to take.
+                    See how your choices impact Quality Education
+                </p>
+
+            </div>
+
+            <!--feedback summary and impact levels-->
+            <div class="feedback-box">
+
+                <p>Your Total Impact Score:</p>
+
+                <!--score updating part using javascript-->
+                <div class="score-number" id="score-display">0</div>
+
+                <!--impact text-->
+                <div class="impact-level" id="level-display">
+                    Select actions below to see your impact
+                </div>
+
+                <div class="impact-message" id="message-display"></div>
+
+                <br>
+
+                <p>Low Impact: 1-4 points | Medium Impact: 5-8 points | High Impact: 9+ points</p>
+
+            </div>
+
+            <button class="reset-button" onclick="resetAll()">Reset</button>
+
+
+
+            <!--6 action cards-->
+            <div class="cards-container">
+
+                <!--card 1-->
+                <div class="action-card" onclick="selectCard(this, 2)">
+                    <!--adding image for card 1-->
+
+                    <!-- Reference: Placeholder image — replace with iStockPhoto image -->
+                    <img src="images/ais_image1.jpg" alt="Person reading a book">
+
+                    <h3>Read for 30 minutes a day</h3>
+                    <p>
+                        Spend at least 30 minutes reading everyday.
+                        Reading builds knowledge and improves critical thinking skills.
+                    </p>
+
+                    <span class="point-batch">2 Impact point</span>
+                </div>
+
+                <!--card 2-->
+                <div class="action-card" onclick="selectCard(this, 3)">
+                    <!--adding image for card 2-->
+
+                    <!-- Reference: Placeholder image — replace with iStockPhoto image -->
+                    <img src="images/ais_image2.jpg" alt="Person tutoring a student">
+
+                    <h3>Volunteer as a tutor</h3>
+                    <p>
+                        Give your time to help others learn. Tutoring a fellow
+                        Student or community member makes a real difference.
+                    </p>
+
+                    <span class="point-batch">3 Impact point</span>
+                </div>
+
+                <!--card 3-->
+                <div class="action-card" onclick="selectCard(this, 2)">
+                    <!--adding image for card 3-->
+
+                    <!-- Reference: Placeholder image — replace with iStockPhoto image -->
+                    <img src="images/ais_image3.jpg" alt="School supplies being donated">
+
+                    <h3>Donate School Supplies</h3>
+                    <p>
+                        Donate pens, notebooks, or books to students who cannot
+                        afford them. Small items can change a child's education.
+                    </p>
+
+                    <span class="point-batch">2 Impact point</span>
+                </div>
+
+                <!--card 4-->
+                <div class="action-card" onclick="selectCard(this, 1)">
+                    <!--adding image for card 4-->
+
+                    <!-- Reference: Placeholder image — replace with iStockPhoto image -->
+                    <img src="images/ais_image4.jpg" alt="Person sharing content on phone">
+
+                    <h3>Share Educational Content Online</h3>
+                    <p>
+                        Share useful articles, videos, or resources on social
+                        media. Spreading knowledge helps others learn too.
+                    </p>
+
+                    <span class="point-batch">1 Impact point</span>
+                </div>
+
+                <!--card 5-->
+                <div class="action-card" onclick="selectCard(this, 2)">
+                    <!--adding image for card 5-->
+
+                    <!-- Reference: Placeholder image — replace with iStockPhoto image -->
+                    <img src="images/ais_image5.jpg" alt="Person taking an online course">
+
+                    <h3>Attend a Free Online Course</h3>
+                    <p>
+                        Use free platforms like Coursera or Khan Academy to
+                        learn new skills. Education does not have to cost money.
+                    </p>
+
+                    <span class="point-batch">2 Impact point</span>
+                </div>
+
+                <!--card 6-->
+                <div class="action-card" onclick="selectCard(this, 3)">
+                    <!--adding image for card 6-->
+
+                    <!-- Reference: Placeholder image — replace with iStockPhoto image -->
+                    <img src="images/ais_image6.jpg" alt="A local school building">
+
+                    <h3>Support a Local School</h3>
+                    <p>
+                        Attend school events, fundraise, or volunteer at a
+                        local school. Community support helps schools thrive.
+                    </p>
+
+                    <span class="point-batch">3 Impact point</span>
+                </div>
+            </div>
+
+
+        </main>
+
+        <br>
+        <footer id="Footer">
+
+            <div class="footer-container"> <!--class creating for the div tags-->
+                <div class="footer-det"> <!--class creating for the div tags-->
+                    <h4>Quick Link</h4> <!--h4 for the main headings-->
+                    <br>
+                    <a href="validation_ST2.html">Validation Page</a>
+                    <br>
+                    <br>
+                    <a href="pageEditor_ST2.html">Page Editor</a>
+                    <br>
+                    <br>
+                    <p>Accessbility</p>
+
+                </div>
+
+                <div class="footer-det">
+                    <h4>Student Detalils</h4><!--h4 for the main headings-->
+                    <br>
+                    <p>Course : Web developement</p>
+                    <br>
+                    <br>
+                    <p>University of WestMinster</p>
+                    <br>
+                    <br>
+                    <p>Year 2026</p>
+                </div>
+
+                <div class="footer-det">
+                    <h4>Compliance</h4><!--h4 for the main headings-->
+                    <br>
+                    <br>
+                    <p>WCAG 2.1 AA Compliant</p>
+                    <br>
+                    <br>
+                    <p>Accessible Design Standards</p> <!--p fo the description part-->
+                </div>
+
+            </div>
+
+            <br>
+            <br>
+            <hr> <!--horizontal line-->
+            <h5> copyright © Group 6 Web Developent</h5>
+
+        </footer>
+
+
+        <!--javascript part-->
+        <script>
+
+            //creating a variable to store the impact score
+            let totalScore = 0;
+
+            //creating a function to click the card 
+            function selectCard(card, points) {
+
+                //selecting and unselecting funtion
+                if (card.classList.contains('selected')) {
+
+                    //if it contains selected class, we need to remove it
+                    card.classList.remove('selected');
+
+                    //and removing the points from feedback form
+                    totalScore = totalScore - points;
+                }
+                else {
+
+                    //if it doesn't contain selected class, we need to add it
+                    card.classList.add('selected');
+
+                    //and adding the points to feedback form
+                    totalScore = totalScore + points;
+                }
+
+                //after changing the score, update the feedback on the page
+                updateFeedback();
+            }
+
+
+
+            function updateFeedback() {
+
+                //finding the elements on html id to update according to user selection
+                var scoreDisplay = document.getElementById('score-display');
+                var levelDisplay = document.getElementById('level-display');
+                var messageDisplay = document.getElementById('message-display');
+
+
+                //updating the score 
+                scoreDisplay.textContent = totalScore;
+
+                //impact level based on the score
+                if (totalScore >= 9) {
+
+                    //high impact
+                    levelDisplay.textContent = 'High Impact';
+                    messageDisplay.textContent = 'Amazing! You are making a huge difference to Quality Education.';
+
+                    //changing the background image accoring to impact level
+
+                    /* Reference: Placeholder image — replace with iStockPhoto image */
+                    document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1600')";
+                    document.body.style.backgroundSize = "cover";
+                    document.body.style.backgroundPosition = "center"
+                }
+
+                else if (totalScore >= 5) {
+
+                    //medium impact
+                    levelDisplay.textContent = 'Medium Impact';
+                    messageDisplay.textContent = 'Good effort! You are taking meaningful steps.';
+
+                    /* Reference: Placeholder image — replace with iStockPhoto image */
+                    document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1600')";
+                    document.body.style.backgroundSize = "cover";
+                    document.body.style.backgroundPosition = "center"
+                }
+
+                else if (totalScore > 0) {
+
+                    //low impact
+                    levelDisplay.textContent = 'Low Impact';
+                    messageDisplay.textContent = 'Good start! Every action counts. Try selecting more actions to grow your impact.';
+
+                    /* Reference: Placeholder image — replace with iStockPhoto image */
+                    document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=1600')";
+                    document.body.style.backgroundSize = "cover";
+                    document.body.style.backgroundPosition = "center";
+
+                }
+
+                else {
+
+                    //if no cards were selected
+                    levelDisplay.textContent = 'Select actions above to see your impact';
+                    messageDisplay.textContent = '';
+
+                    //resetting the background image
+                    document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1600')";
+
+                }
+            }
+
+            //reset button
+            function resetAll() {
+                totalScore = 0;
+
+                //selecting the cards that have action-card class
+                var allCards = document.querySelectorAll('.action-card');
+
+                //loop through everycard to remove the selected class
+
+                for (var i = 0; i < allCards.length; i++) {
+                    allCards[i].classList.remove('selected');
+                }
+
+                //upadating the feedback to show zero again
+                updateFeedback();
+            }
+
+        </script>
+
+    </div><!--closing the page-wrapper div-->
+
+</body>
+
+</html>
