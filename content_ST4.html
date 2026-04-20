@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>content_ST4</title>
+        <link rel="stylesheet" href="Global.css">
+        <style>
+            /*This class for sidebar*/
+            .sidebar{
+                line-height:3.0;
+                position:fixed;
+                width:150px;
+                top:95px;
+                background-color: rgb(18, 12, 44);
+                padding:5px;
+                height:300px;
+                text-align: center;
+            }
+            
+            /*This id for designong the sub titles of main topic*/
+            #sectionTitle a{
+                font-size: 20px;
+                color:white;
+            }
+
+            /*add hover affect to sub titles*/
+            #sectionTitle a:hover {
+                background-color: rgb(214, 14, 14);
+                color:white;
+            }
+
+            /*This is for content related to sub titles*/
+            .content{
+                margin-left:160px;
+                padding:20px;
+            }
+
+            /*This is for Go To Top button decoration*/
+            .goToTop a{
+                position:fixed;
+                bottom:20px;
+                right:20px;
+                background-color:rgb(255, 0, 0);
+                color:white;
+                padding:10px;
+                border-radius:5px;
+            }
+
+            /*access to other content pages*/
+            #accessContentPages a{
+                display:inline;
+                padding:10px;
+                background-color:rgb(6, 6, 88);
+                color:white;
+                border-radius:10px;
+                margin-left: 10px;
+            }
+
+            /*style the 1,2,3,4 buttons*/
+            #contentPagesbuttons{
+                text-align:center;
+            }
+
+            
+            h1{
+                text-align:center;
+                background-color:#eeadee;
+            }
+
+            h2{
+                text-decoration:underline;
+            }
+
+            /*common styles for images*/
+            img{
+                height:auto;
+                border-radius: 10px;
+                box-shadow:5px 10px 10px rgb(0,0,0,0.5);
+                max-width:40%;
+            }
+
+            /*style the image 1*/
+            .img1{
+                display:block;
+                margin:auto;
+            }
+
+            p{
+                line-height: 1.6;
+                text-align:justify;
+            }
+
+            /*this class for all content inside the titles*/
+            .contentSection{
+                font-size:19px;
+                font-family:"Times New Roman";
+            }
+
+
+            ol ul{padding-left:70px;
+                list-style-type:disc;
+            }
+
+            ol{padding-left:50px;}
+
+            ul li{
+                margin-left:70px;
+            }
+
+            /*This class for style the cards*/
+            .topicsContainBoxes{
+                display:flex;
+                align-items:stretch;/*make 2 boxes with same height*/
+                gap:20px;    
+            }
+
+            /*This class for style the boxes inside the content*/
+            .card1{
+                border:2px solid black;
+                padding:2%;
+                margin-left:10%;
+                background-color:rgb(179, 179, 235);
+                
+            }
+
+            /*this class for 2nd box of 1st title*/
+            .topic1Box2 li{
+                line-height: 2.0;
+            }
+
+            /*this class for image 2*/
+            .img2{
+                float:left;
+                margin-right:20px;
+            }
+
+            /*this class for under title2 boxes*/
+            .card2{
+                border:2px solid black;
+                padding:2%;
+                margin-left:2%;
+                margin-right:2%;
+                line-height: 2.0;
+                background-color: rgb(223, 227, 238);    
+            }
+
+            /*style the image 3 under title 3*/
+            .img3{
+                float:right;
+                margin-left:20px;
+            }
+
+            /*style the image 4 under title 4*/
+            .img4{
+                display:block;
+                margin:auto;
+            }
+            
+            /*this class uses one time for box under title4*/
+            .card3{
+                border:2px solid black;
+                display:block;
+                margin:auto;
+                padding: 10px;
+                text-align:center;
+                color:black;
+                background-color: white;
+            }
+
+            body{
+                background-color:rgb(228, 213, 228);
+            }
+
+            /*mobile responsive*/
+            @media (max-width:1000px){
+
+                /*sidebar becomes a horizontal scrollable strip at the top*/
+                .sidebar{
+                    position:relative;
+                    top:0;
+                    width:100%;
+                    height:auto;
+                    display:flex;
+                    justify-content:center;
+                    gap:5px;
+                    padding:8px 10px;
+                    background-color:rgb(4, 4, 71);
+                }
+
+                /*sidebar links inline*/
+                #sectionTitle{
+                    display:flex;
+                    flex-wrap:wrap;
+                    justify-content:center;
+                    gap:5px;
+                    line-height:1;
+                }
+
+                #sectionTitle a{
+                    font-size:14px;
+                    padding:5px 10px;
+                    background-color:rgb(39, 65, 71);
+                    border-radius:5px;
+                }
+
+                #sectionTitle a:hover{
+                    background-color:rgb(219, 41, 41);
+                }
+
+                /*content takes full width*/
+                .content{
+                    margin-left:0;
+                    padding:15px;
+                }
+
+                /*cards makes as vertically */
+                .topicsContainBoxes{
+                    flex-direction:column;
+                    gap:15px;
+                }
+
+                /*styles for cards*/
+                .card1,
+                .card2,
+                .card3{
+                    margin-left:0;
+                    margin-right:0;
+                    width:100%;
+                }
+
+                /*Images stop floating - center them*/
+                img{
+                    float:none;
+                    display:block;
+                    margin: 10px auto;
+                    max-width:70%;
+                }
+
+                .img2,
+                .img3{
+                    margin-right:0;
+                    margin-left:0;
+                }
+
+                p{
+                    font-size:23px;
+                }
+
+                ul li{
+                    margin:25px;
+                }
+            }
+
+            @media(min-width:1024px)
+            {
+                .content{
+                    font-size:22px;
+                }
+            }
+
+        </style>
+    </head>
+<body>
+    <header  id="top">
+        <nav class="nav">
+                        <div id="logo"><!--ID for logo-->
+                            <img src="images/logo.jpeg" width="75" height="70" alt="image of the logo"><!--Add the image--> 
+                            <span class="logo-text">Learn Scape</span> <!--Used span becaause of this wording is a inline thing--> </div>
+                            <input type="checkbox" id="menu-button"> <!--Hidden checkbox im using this to open and close the mobile navigation menu -->
+                            <label for="menu-button" class="menu-button">&#9776;</label> <!--Menu button-->
+                            <div class="navigation"> <!--navigation bar-->
+
+                                <a href="home.html">Home</a><!--Home Tab-->
+                                <a href="ais.html">Simulator</a><!--Simulator Tab-->
+                                <a href="gallery.html">Gallery</a><!--Gallery tab-->
+                                <a href="profile.html">Profile</a><!--Profile tab-->
+                                <a href="feedback.html">Feeback</a><!--Feedback tab-->
+                                <a href="team.html">Team</a>  <!--Team tab-->
+                                <a href="sitemap.html">SiteMap</a>  <!--Sitemap tab-->
+                            </div>
+                                   
+        </nav>
+    </header>
+        <main>
+            <!--this is for sidebar part-->
+            <div  class="sidebar">  
+                <div id="sectionTitle"> 
+                        <a href="#title1">Introduction</a><br>
+                        <a href="#title2">Skills</a><br>
+                        <a href="#title3">Programs</a><br>
+                        <a href="#title4">ESD</a><br>
+                        <a href="#title5">Benefits</a>
+                </div>
+            </div>
+            
+            <!--this is for content-->
+            <div class="contentSection">
+                <div class="content">
+                    <h1>Lifelong Learning for Sustainable Future</h1>    <!--main topic of content page-->
+                    <br><br>
+
+                    <div>
+                        <br>
+                        <h2 id="title1">1. What is Lifelong Learning?</h2><br>    <!--sub topic 1-->
+                
+                        <img src="images/lifelongLearning.jpg" alt="Lifelong Learning image" class="img1">
+                        <br>
+                        
+                        <div>
+                            <p>Lifelong learning is the ongoing process of acquiring knowledge, skills, values, and competencies
+                                throughout a person's life. Unlike, traditional education, which is often limited to schools or 
+                                universities, lifelong learning extends beyond formal setting to everyday experiences, workplaces, 
+                                communities, and digital environments.
+                            </p>
+                            <br>
+                
+                            <p>In today's rapidly changing world, lifelong learning is essential as knowledge
+                                quickly becomes outdated. New technologies, industries, and global challenges
+                                require individuals to constantly update their understanding and skills.  
+                            </p>
+                            <br><br>
+                        </div>
+
+                        <!--this part for two cards under sub topic one-->
+                        <div class="topicsContainBoxes">
+                            <div class="card1">             <!--first card called "learning tupes"-->
+                               <h3>Learning Types:</h3>
+                                <br><br>
+                                <ol>
+                                    <li>
+                                        Formal learning
+                                    <ul>
+                                        <li>schools</li>
+                                        <li>universities</li>
+                                        <li>certifications</li>
+                                    </ul>
+                                    </li>
+                                    <li>
+                                        Informal learning
+                                        <ul>
+                                            <li>self study</li>
+                                            <li>life experience</li>
+                                            <li>training programs</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </div>   
+
+                            <div class="card1">
+                                <h3>Empowers to:</h3>       <!--second card called for "Empoers to"-->
+                                <br><br>
+                                <ul class="topic1Box2">
+                                    <li>Adopt to change</li>
+                                    <li>stay competitive in the job market</li>
+                                    <li>Develop personal interests and passion</li>
+                                    <li>contribute meaningfully to society</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    
+                    <div>
+                        <h2 id="title2">2. Importance of Skills Development</h2> <!--sub topic 2-->
+                        <br><br>
+                        <div>
+                            <img src="images/Skills.jpg" alt="A team is working collaboratively" class="img2">
+
+                            <p>
+                                Skill development is an important part of lifelong learning. It helps people grow in their personal lives and 
+                                in their jobs. Today, the world is changing very rapidly due to new technologies, global connections, and
+                                changes in the economy. Because of this, the skills people need are also changing. Therefore, it is important 
+                                for everyone to continue learning and improving their skills to stay up-to-date and competitive.
+                            </p>
+                        
+                            <br><br>
+                            <p>
+                                It ensures individuals remain relevant, employable, and capable of handling modern challenges. It also increases confidence and independence.
+                            </p>
+                            <br><br>
+                        </div>
+                        <!--this part for three cards under sub topic two-->
+                        <div class="topicsContainBoxes">
+                            <div class="card2"> 
+                                <h3>Soft Skills</h3>    <!--first card called "Soft Skills"-->
+                                <ul>
+                                    <li>Communication</li>
+                                    <li>Teamwork and Collaboration</li>
+                                    <li>Problem solving and Critical thinking</li>
+                                    <li>Leadership and Management</li>
+                                </ul>
+                            </div>
+                            <div class="card2">
+                                <h3>Technical Skills(depends on jobs)</h3>  <!--second card called "Technical Skills"-->
+                                <ul>
+                                    <li>Coding and programming</li>
+                                    <li>Data analysis and interpretation</li>
+                                    <li>Engineering </li>
+                                    <li>medical and healthcare</li>
+                                    <li>Financial and accounting</li>
+                                </ul>
+                            </div>
+                            <div class="card2">
+                                <h3>Digital Skills</h3> <!--third card called "Digital Skills"-->
+                                <ul>
+                                    <li>Using software tools</li>
+                                    <li>Navigating online platform</li>
+                                    <li>Understanding cybersecurity</li>
+                                    <li>Using AI platforms</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div>
+                        <h2 id="title3">3. Community Education Programs</h2> <!--sub topic 3-->
+                        <br><br>
+                        <div>
+                            <img src="images/Community.jpg" alt="A teacher is teaching a group of children" class="img3">
+
+                            <p>Community education programs play an important role in promoting lifelong learning, especially for people 
+                                who do not have access to formal education. These programs are usually affordable or free, easily accessible 
+                                to local communities, and designed to serve people of all ages. Common examples include adult literacy 
+                                classes, vocational training workshops, language learning programs, and environmental awareness campaigns. 
+                            </p>
+                            <br><br>
+                            <p>
+                                This programs help include everyone, give people equal chances, and support the development of the local area.
+                                They also make communities stronger by bringing people together to learn and grow.<br><br>
+                                For example, a local workshop that teaches sustainable farming can help people grow more food while also 
+                                protecting the environment.
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div>
+                        <h2 id="title4">4. Education for Sustainable Development (ESD)</h2>   <!--sub topic 4-->
+                        <div>
+                            <br><br>
+                            <img src="images/ESD.jpg" alt="children hold a earth globe" class="img4">
+                            <br><br>
+                            
+                            <p>
+                                Education for Sustainable Development(ESD) is an important part of learning throughout life. It helps people 
+                                gain the knowledge and skills needed to create a better and more responsible world. It is linked to global 
+                                problems like climate change, poverty, inequality, and how we use resources. Through ESD, people learn to make 
+                                good choices for the environment, live in a sustainable way, and support fairness and equality in society.
+                            </p> 
+                            <br><br> 
+                        </div>
+                        <div class="topicsContainBoxes">
+                            <div class="card3">
+                                <h3>Sustainable development is about three main ideas: </h3>
+                                <p>Caring for the environment, Supporting the economy, and Being responsible to society</p>
+                            </div>
+                            
+                        </div>
+                        <div>
+                            <br><br>
+                            <p>Students and communities can help by doing simple things in their daily lives. This includes reducing waste, saving
+                                energy, and supporting businesses that do the right thing. When people make careful and responsible choices, they 
+                                help protect the environment, improve the economy, and make society fair for everyone.
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div>
+                        <br>
+                        <h2 id="title5">5. How Lifelong Learning Benefits Society</h2>   <!--sub topic 5-->
+                        <br>
+                        <p>Lifelong learning does not only benefit individuals. It has a powerful impact on society as a whole.</p>
+                    
+                        <br><br>
+                        <!--this part for three cards under sub topic five-->
+                        <div class="topicsContainBoxes">
+                            <div class="card2">
+                                    <h3>Social Benefits</h3>    <!--first card-->
+                                    <ul>
+                                        <li>Promotes equality and inclusion</li>
+                                        <li>Reduces poverty through education</li>
+                                        <li>Encourages active citizenship</li>  
+                                    </ul>
+                            </div>
+                            <div class="card2">
+                                <h3>Economic Benefits</h3>      <!--second card-->
+                                <ul>
+                                    <li>Creates a skilled workforce</li>
+                                    <li>Boosts innovation and productivity</li>
+                                    <li>Support economic growth</li>
+                                </ul>
+                            </div>
+                            <div class="card2">
+                                <h3>Environment Benefits</h3>   <!--third card-->
+                                <ul>
+                                    <li>Encourages sustainable behaviours</li>
+                                    <li>Increases awareness of global issues</li>
+                                    <li>Promotes responsible resource</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br><br>
+            <!--Acess for other content pages-->
+            <div id="contentPagesbuttons">
+                <div id="accessContentPages">
+                    <a href="content_ST1.html">ST1</a>
+                    <a href="content_ST2.html">ST2</a>
+                    <a href="content_ST3.html">ST3</a>
+                    <a href="content_ST4.html">ST4</a>
+                </div>
+            </div>
+            
+            
+            <!--This is for "Go To Top" button-->
+            <div>
+                <div>
+                    <span class="goToTop"><a href="#top">Go To Top</a></span>
+                </div>
+            </div>
+            
+        </main>
+
+    <br>
+<footer id="Footer">
+      
+        <div class="footer-container">  <!--class creating for the div tags-->
+            <div class="footer-det"> <!--class creating for the div tags-->
+                <h4>Quick Link</h4> <!--h4 for the main headings-->
+                <br>
+                <a href="validation_ST4.html">Validation Page</a> 
+                <br>
+                <br>
+                <a href="pageEditor_ST4.html">Page Editor</a>
+                <br>
+                <br>
+                <p>Accessibility</p>
+            </div>
+
+            <div class="footer-det">
+                <h4>Student Detalils</h4><!--h4 for the main headings-->
+                <br>
+                <p>Course : Web developement</p>
+                <br>
+                <br>
+                <p>University of WestMinster</p>
+                <br>
+                <br>
+                <p>Year 2026</p>
+            </div>
+
+            <div class="footer-det">
+                <h4>Compliance</h4><!--h4 for the main headings-->
+                <br>
+                <br>
+                <p>WCAG 2.1 AA Compliant</p>
+                <br>
+                <br>
+            <p>Accessible Design Standards</p> <!--p fo the description part-->
+            </div>
+            
+        </div>
+      
+        <br>
+        <br>
+        <hr> <!--horizontal line-->
+        <h5> copyright &copy; Group 6 Web Developent</h5>
+    </footer>
+</body>
+</html>   

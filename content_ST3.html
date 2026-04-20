@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Content Page 3 -Chathuni Dias</title>
+        <link rel="stylesheet" href="Global.css">
+        <style>
+            /*This class for sidebar*/
+            .sidebar{
+                line-height:3.0;
+                position:fixed;
+                width:230px;
+                top:95px;
+                background-color: rgb(18, 12, 44);
+                padding:5px;
+                height:300px;
+                text-align: center;
+                text-decoration: underline;
+            }
+            
+            /*This id for designong the sub titles of main topic*/
+            #sectionTitle a{
+                font-size: 20px;
+                color:white;
+                white-space: nowrap;
+            }
+
+            /*add hover affect to sub titles*/
+            #sectionTitle a:hover {
+                background-color: rgb(214, 14, 14);
+                color:white;
+                
+
+            }
+
+            /*This is for content related to sub titles*/
+            .content{
+                margin-left:220px;
+                padding:20px;
+
+            }
+            /*This is for Go To Top button decoration*/
+            .goToTop a{
+                position:fixed;
+                bottom:20px;
+                right:20px;
+                background-color:rgb(255, 0, 0);
+                color:white;
+                padding:10px;
+                border-radius:5px;
+            }
+
+            /*acess to other content pages*/
+            #accessContentPages a{
+                display:inline;
+                padding:10px;
+                background-color:rgb(6, 6, 88);
+                color:white;
+                border-radius:10px;
+                margin-left: 10px;
+            }
+
+
+
+
+            #contentPagesbuttons{
+                text-align:center;
+            }
+
+            .top-section {
+                display: block;  /*Makes the container behave like a block element*/
+                gap: 40px;  /*Add space between*/
+            }
+
+            .top-section h1 {
+                text-align: center;  /*Center align text*/
+                margin: 20px 0;  /*Add space only to the top and bottom */
+                font-size: 30px;  /*Set font size*/
+                flex: 1;  /*Makes item take equal available space*/
+                min-width: 300px;  /*Prevents element from becoming smaller than 300px*/
+            }
+
+            /*Main card container for title*/
+            .card.title {
+                width: 100%;  /*Takes full width*/
+                max-width: 100%;  /*Limits maximum width to 100%*/
+                margin-top: 20px;  /*Adds space above the card*/
+                background: linear-gradient(to right, lightblue, white);  /*Horizontal color gradient from lightblue to white*/
+                border-radius: 15px;  /*Rounds the corners of the card*/
+                padding: 30px;  /*Make space inside the card*/
+                text-align: center;  /*Center the all text inside the card*/
+            }
+
+            .card.title h2 {
+                font-style: oblique;
+                font-size: 30px;
+                text-shadow: 2px 2px 4px darkgray;  /*Add a shadow behind to the text*/
+            }
+
+            .card.title h3 {
+                font-style: italic;
+                font-size: 25px;
+                color: darkslateblue;
+                text-shadow: 2px 2px 4px #0056b3;  /*Moves shadow 2px right, 2px down and 4px blur*/
+            }
+
+            .card.title img {
+                width: 100%;  /*Image take full width of the card*/
+                height: 400px;  /*Sets a fixed height*/
+                border: 2px solid black;
+                box-shadow: 2px 5px 10px rgb(22, 22, 67);  /*Add a shadow around the image*/
+                object-fit: cover;  /*Image fits the entire space without stretching*/
+            }
+
+            /*Introduction Card*/
+            .intro-box {
+                display: flex;
+                align-items: center;  /*Aligns items vertically*/
+                justify-content: space-between;  /*Spreads items horizontally*/
+                background: linear-gradient(to bottom, white, rgb(146, 218, 241));  /*Vertical color gradient from white to blue*/
+                padding: 30px;
+                border-radius: 12px;
+                border: 4px double rgb(5, 28, 79);
+                gap: 30px;
+            }
+
+            .intro-text {
+                font-style: italic;
+                font-size: 25px;
+                width: 70%;
+            }
+
+            .intro-image img {
+                width: 250px;
+                height: auto;
+                border-radius: 50px;
+                border: 2px solid #000;
+            }
+
+            /*Skills card*/
+            .skills {
+                display: flex;
+                gap: 20px;
+            }
+
+            .skills-card {
+                display: flex;
+                flex-direction: column;  /*Stacks items vertically*/
+                flex: 1;  /*Equal width cards*/
+                padding: 5px;
+                border: 2px solid black;
+                border-radius: 10px;
+                background: rgb(198, 224, 245);
+                align-items: center;  /*Center content horizontally*/
+                text-align: center;
+            }
+
+            .skills-card:hover {
+                transform: scale(1.05);  /*Slight zoom on hover*/
+            }
+
+            .skills-card img {
+                width: 100%;
+                max-width: 200px;       
+                height: 200px;
+                padding: 10px;
+                margin: 0 auto;
+                object-fit: cover;  /*Fills container, may crop image*/
+                object-position: center;  /*Centers image content*/
+                outline-style: double;  /*Double outline border*/
+            }  
+
+            /*Program cards*/
+            .programs-card {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                width: 100%;  /*Full width*/
+                margin: 20px auto;
+                padding: 15px;
+                border: 2px solid black;
+                border-radius: 10px;
+                background: linear-gradient(to right, rgb(174, 208, 248), white);
+                overflow: hidden;  /*Hides overflow content*/
+                box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+                transition: 0.3s;
+            }
+
+            .programs-card:hover {
+                transform: translateY(-8px);  /*Moves card up*/
+                box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            }
+
+            .programs-card-image img {
+                width: 200px;       
+                height: 200px;
+            }
+
+            .programs-card-content {
+                display: flex;
+                flex: 1;  /*Takes remaining space*/
+                font-size: 16px;
+                line-height: 1.5;  /*Line spacing*/
+                padding: 10px;
+            }
+
+            .programs-card-content p {
+                font-size: 20px;
+                font-style: inherit;
+                color: #555;
+                line-height: 1.5;
+            }
+
+            .skills-list {
+                display: flex;
+                flex: 1;
+                font-size: 20px;
+                padding: 5px;
+            }
+
+            .skills-list li {
+                margin: 10px;
+                padding-left: 25px;   /*Left spacing*/
+                position: relative;  /*Allows element to be moved from its normal position*/
+            }
+
+            /*Qualities cards*/
+            .qualities {
+                display: flex;
+                justify-content: space-between;
+                gap: 15px;
+            }
+
+            .qualities-card {
+                width: 20%; /* 5 cards in one row */
+                height: 320px; /* taller than width */
+                border: 2px solid #ccc;
+                border-radius: 10px;
+                padding: 15px;  
+                text-align: center;
+                background: #d3e3f9;
+            }
+
+            .qualities-card:hover {
+                background: #94baf2;
+                transform: scale(1.1);
+            }
+
+            .qualities-card img {
+                width: 100%;
+                height: 160px;
+                object-fit: cover;
+                border-radius: 8px;
+                margin: 10px 0;
+            }
+
+            .qualities-card h3 {
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+
+            .qualities-card p {
+                font-size: 16px;
+            }
+
+            .quotes-section {
+                width: 100%;
+            }
+
+            .quote-box {
+                background: #d4e2f5;
+                border-left: 6px solid #0056b3;
+                padding: 20px;
+                margin: 5px 0;
+                border-radius: 8px;
+                width: 100%;
+            }
+
+            .quote-box:hover {
+                transform: translateX(10px);
+            }
+
+            .quote-box p {
+                font-style: italic;
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            .quote-box h4 {
+                text-align: right;
+                font-size: 16px;
+                font-weight: normal;
+                color: #333;
+            }
+
+            /*Mobile Responsiveness*/
+        @media (max-width: 768px) {
+
+            /* Sidebar moveing to the top*/
+            .sidebar {
+                position: relative;  /* Removes fixed positioning */
+                width: 100%;
+                height: auto;
+                top: 0;  /*Aligns to top*/
+            }
+
+            .content {
+                margin-left: 0;  /*Removes left space for sidebar*/
+            }
+
+            .intro-box {
+                flex-direction: column;  /*Stacks items vertically*/
+                text-align: center;
+            }
+
+            .intro-text {
+                width: 100%;
+                font-size: 18px;  /*Reduces text size for small screens*/
+            }
+
+            .skills {
+                flex-direction: column;  /*Places cards in a single column*/
+            }
+
+            .skills-card img {
+                margin-left: auto;  /*Pushes element to the right*/
+                margin-right: auto;  /*Pushes element to the left*/
+                display: block;  /*Makes image behave like block element*/
+            }
+    
+            .programs-card {
+                flex-direction: column;  /*Stacks image and content vertically*/
+                text-align: center;  /*Centers all content*/
+            }
+
+            .skills-list {
+                justify-content: center;  /*Centers list items*/
+            }
+
+            .qualities {
+                flex-direction: column;  /*Stacks cards vertically*/
+            }
+
+            .qualities-card {
+                width: 100%;
+            }
+
+            img {
+                max-width: 100%;  /*Prevents image overflow*/
+                height: auto;
+            }
+
+            .card.title img {
+                height: auto;  /*Removes fixed height for better scaling*/
+            }
+        }
+            
+
+
+
+        </style>
+    </head>
+
+<body>
+    <main id="top">
+        <nav class="nav">
+                        <div id="logo"><!--ID for logo-->
+                            <img src="images/Logo.jpeg" width="75" height="70" alt="image of the logo"><!--Add the image--> 
+                            <span class="logo-text">Quality Education</span> <!--Used span becaause of this wording is a inline thing--> </div>
+                            <input type="checkbox" id="menu-button"> <!--Hidden checkbox im using this to open and close the mobile navigation menu -->
+                            <label for="menu-button" class="menu-button">&#9776;</label> <!--Menu button-->
+                            <div class="navigation"> <!--navigation bar-->
+
+                               <a href="home.html">Home</a><!--Home Tab-->
+                                <a href="ais.html">Simulator</a><!--Simulator Tab-->
+                                <a href="gallery.html">Gallery</a><!--Gallery tab-->
+                                <a href="#profile.html">Profile</a><!--Profile tab-->
+                                <a href="feedback.html">Feedback</a><!--Feedback tab-->
+                                <a href="team.html">Team</a>  <!--Team tab-->
+                                <a href="sitemap.html">SiteMap</a>  <!--Sitemap tab-->
+                            </div>
+                                   
+        </nav>
+        
+            <div class="sidebar">
+                <div id="sectionTitle"> 
+                        <a href="#title1">Introduction</a><br>
+                        <a href="#title2">Leadership Skills</a><br>
+                        <a href="#title3">Youth Leadership Programs</a><br>
+                        <a href="#title4">Personal Development</a><br>
+                        <a href="#title5">Inspiring Quotes</a>
+                </div>
+            </div>
+
+        
+            <section>
+                <div class="content">
+                    <div class="top-section">                                            
+                        <h1><I>Education Builds Future Leaders</I></h1>
+
+                        <div class="card title">
+                            <img src="images/leadershipbanner.jpg" alt="banner of the content">
+
+                            <h2>From Learning to Leading</h2>
+                            <h3>Inspiring Students to Develop Strong Leadership Skills, Build Confidence, and Achieve Meaningful Success</h3>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+
+                    <h2 id="title1">Introduction</h2>
+                    <div class="intro-box">
+                        <div class="intro-text">
+                            <p>
+                                Education is the pathway to unlocking leadership potential. It nurtures confidence, builds strong values, and develops 
+                                critical thinking skills. By empowering individuals with knowledge and courage, education helps them lead with purpose 
+                                and make a meaningful difference in the world.
+                            </p>
+                        </div>
+
+                            <div class="intro-image">
+                                <img src="images/introimage.jpg" alt="Introduction image">
+                            </div>
+                    </div>
+                    <br>
+                    <br>
+
+                    <h2 id="title2">Leadership Skills</h2>
+                    <div class="skills">
+                            <div class="skills-card">
+                                <img src="images/communication.jpeg" alt="Image of Communication">
+                                <h3>Communication</h3>
+                                    <p>Encourages students to express their ideas clearly, confidently, and effectively in different environments.</p>
+                            </div>
+
+                            <div class="skills-card">
+                                <img src="images/teamwork.jpeg" alt="Image of Teamwork">
+                                <h3>Team Work</h3>
+                                    <p>Guides students in working together efficiently, promoting collaboration and mutual respect.</p>
+                            </div>
+
+                            <div class="skills-card">
+                                <img src="images/confidence.jpeg" alt="Image of Confidence">
+                                <h3>Confidence</h3>
+                                    <p>Inspires students to take initiative, think independently, and confidently lead their own learning.</p>
+                            </div>
+                        </div>
+                    <br>
+                    <br>
+                    
+                    <h2 id="title3">Youth Leadership Programs</h2>
+                    <div class="programs">
+
+                            <h3>Student Council</h3>
+                            <div class="programs-card">
+                                
+                                    <div class="programs-card-image">
+                                        <img src="images/studentcouncil.jpg" alt="Image of student council">
+                                    </div>
+
+                                    <div class="programs-card-content">
+                                        <p>
+                                           Inspires students to become leaders by giving them a voice, encouraging teamwork 
+                                           and involving them in meaningful school decisions. 
+                                        </p>
+                                    </div>
+                                
+                                    <div class="skills-list">
+                                        <ul>
+                                            <li>Develops leadership skills</li>
+                                            <li>Encourages student representation</li>
+                                            <li>Promotes teamwork and collaboration</li>
+                                            <li>Builds confidence and responsibility</li>
+                                            <li>Enhances communication skills</li>
+                                            <li>Involves students in decision-making</li>
+                                        </ul>
+                                    </div>
+                                    
+                            </div>
+
+                            <h3>Leadership Workshops</h3>
+                            <div class="programs-card">
+
+                                    <div class="programs-card-image">
+                                    <img src="images/workshop.jpg" alt="Image of leadership workshops">
+                                </div>
+
+                                    <div class="programs-card-content">
+                                        <p>
+                                           Motivates students to support others, develop empathy and kindness, and understand diverse perspectives while 
+                                           building a strong sense of social responsibility and community awareness. 
+                                        </p>
+                                    </div>
+                                
+                                    <div class="skills-list">
+                                        <ul>
+                                            <li>Builds empathy and compassion</li>
+                                            <li>Promotes kindness and respect</li>
+                                            <li>Understanding diversity</li>
+                                            <li>Strengthens social responsibility</li>
+                                            <li>Increases community awareness</li>
+                                            <li>Inspires positive social impact</li>
+                                        </ul>
+                                    </div>
+                            </div>
+
+                            <h3>Community Service</h3>
+                            <div class="programs-card">
+                                
+                                <div class="programs-card-image">
+                                    <img src="images/communityservice.jpg" alt="Image of Community Service">
+                                </div>
+
+                                    <div class="programs-card-content">
+                                        <p>
+                                            Inspires students to make a positive impact by helping others, embracing
+                                            diversity, and developing a strong sense of community responsibility.
+                                        </p>
+                                    </div>
+                                
+                                    <div class="skills-list">
+                                        <ul>
+                                            <li>Encourages helping and supporting others</li>
+                                            <li>Contributes to positive change</li>
+                                            <li>Promotes acceptance of diverse backgrounds</li>
+                                            <li>Engages in teamwork activities</li>
+                                            <li>Develops community awareness</li>
+                                            <li>Inspires positive contributions to society</li>
+                                        </ul>
+                                    </div>
+
+                                
+                            </div>
+
+                            <h3>Debate & Public Speaking</h3>
+                            <div class="programs-card">
+                                
+
+                                <div class="programs-card-image">
+                                    <img src="images/publicspeaking.jpg" alt="Image of public speaking">
+                                </div>
+
+                                    <div class="programs-card-content">
+                                        <p>
+                                            Empower students to express ideas clearly, build confidence, and think critically
+                                            through active participation, engaging discussions, and thoughtful reflection.
+                                        </p>
+                                    </div>
+                                
+                                    <div class="skills-list">
+                                        <ul>
+                                            <li>Improves communication skills</li>
+                                            <li>Builds self-confidence</li>
+                                            <li>Encourages active participation</li>
+                                            <li>Enhances critical thinking</li>
+                                            <li>Promotes discussion and collaboration</li>
+                                            <li>Develops reflective thinking</li>
+                                        </ul>
+                                    </div>
+                            </div>
+                        </div>
+
+                    <br>
+                    <br>
+                    
+                    <h2 id="title4">Personal Development</h2>
+                    <div class="qualities">
+                            <div class="qualities-card">
+                                <h3>Self-Confidence</h3>
+                                <img src="images/selfconfidence.jpg" alt="Image of self-confidence">
+                                    <p>Builds belief in abilities and encourages students to express themselves without fear.</p>
+                            </div>
+
+                            <div class="qualities-card">
+                                <h3>Time Management</h3>
+                                <img src="images/timemanagement.jpg" alt="Image of time management">
+                                    <p>Helps students organize tasks, manage time effectively, and improve productivity.</p>
+                            </div>
+
+                            <div class="qualities-card">
+                                <h3>Goal Setting</h3>
+                                <img src="images/goalsetting.jpg" alt="Image of goal setting">
+                                    <p>Guides students to set clear goals and stay motivated to achieve them.</p>
+                            </div>
+
+                            <div class="qualities-card">
+                                <h3>Emotional Intelligence</h3>
+                                <img src="images/emotionalintelligence.jpg" alt="Image of emotional intelligence">
+                                    <p>Improves understanding of emotions and builds strong relationships.</p>
+                            </div>
+
+                            <div class="qualities-card">
+                                <h3>Responsibility</h3>
+                                <img src="images/responsiblity.jpg" alt="Image of self-confidence">
+                                    <p>Encourages accountability and develops positive habits.</p>
+                            </div>
+                        </div>
+
+                    <br>
+                    <br>
+
+                    <h2 id="title5">Inspiring Quotes</h2>
+                    <div class="quotes-section">
+
+                            <div class="quote-box">
+                                <p>"Education is the most powerful weapon you can use to change the world."</p>
+                                <h3>- Nelson Mandela</h3>
+                            </div>
+
+                            <div class="quote-box">
+                                <p>"A leader is one who knows the way, goes the way, and shows the way."</p>
+                                <h3>- John C. Maxwell</h3>
+                            </div>
+
+                            <div class="quote-box">
+                                <p>"Leadership is not about being in charge. It is about taking care of those in your charge."</p>
+                                <h3>- Simon Sinek</h3>
+                            </div>
+
+                        </div>
+                    <br>
+                </div>
+            </section>
+
+            <!--Acess for other content pages-->
+            <div id="contentPagesbuttons">
+                <div id="accessContentPages">
+                    <a href="content_ST1.html">ST1</a>
+                    <a href="content_ST2.html">ST2</a>
+                    <a href="content_ST3.html" class="active">ST3</a>
+                    <a href="content_ST4.html">ST4</a>
+                </div>
+            </div>
+            
+            
+            <!--This is for "Go To Top" button-->
+            <div>
+                <div>
+                    <span class="goToTop"><a href="#top">Go To Top</a></span>
+                </div>
+            </div>
+            
+    </main>
+               
+            
+
+    
+    <br>
+<footer id="Footer">
+
+        <div class="footer-container"> <!--class creating for the div tags-->
+            <div class="footer-det"> <!--class creating for the div tags-->
+                <h4>Quick Link</h4> <!--h4 for the main headings-->
+                <br>
+                <a href="validation_ST3.html">Validation Page</a>
+                <br>
+                <br>
+                <a href="pageEditor_ST3.html">Page Editor</a>
+                <br>
+                <br>
+                <p>Accessbility</p>
+
+            </div>
+
+            <div class="footer-det">
+                <h4>Student Detalils</h4><!--h4 for the main headings-->
+                <br>
+                <p>Course : Web developement</p>
+                <br>
+                <br>
+                <p>University of WestMinster</p>
+                <br>
+                <br>
+                <p>Year 2026</p>
+            </div>
+
+            <div class="footer-det">
+                <h4>Compliance</h4><!--h4 for the main headings-->
+                <br>
+                <br>
+                <p>WCAG 2.1 AA Compliant</p>
+                <br>
+                <br>
+                <p>Accessible Design Standards</p> <!--p fo the description part-->
+            </div>
+
+        </div>
+
+        <br>
+        <br>
+        <hr> <!--horizontal line-->
+        <h5> copyright © Group 6 Web Developent</h5>
+
+    </footer>
+</body>
+
+
+
+</html>   

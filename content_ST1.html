@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Content page 1-Sachithra Perera</title>
+        <link rel="stylesheet" href="Global.css">
+        <style>
+            /*This class for sidebar*/
+            .sidebar{
+                line-height:3.0;
+                position:fixed;
+                width:150px;
+                top:95px;
+                background-color: rgb(18, 12, 44);
+                padding:5px;
+                height:300px;
+                text-align: center;
+            }
+            
+            /*This id for designong the sub titles of main topic*/
+            #sectionTitle a{
+                font-size: 18px;
+                color:white;
+            }
+
+            /*add hover affect to sub titles*/
+            #sectionTitle a:hover {
+                background-color: rgb(214, 14, 14);
+                color:white;
+            }
+
+            /*This is for content related to sub titles*/
+            .content1{
+                margin-left:160px;
+                padding:20px;
+                background-color:#F5F5F4;
+                border: 1px solid black;
+
+            }
+            /*This is for Go To Top button decoration*/
+            .goToTop a{
+                position:fixed;
+                bottom:20px;
+                right:20px;
+                background-color:rgb(255, 0, 0);
+                color:white;
+                padding:10px;
+                border-radius:5px;
+            }
+
+            /*acess to other content pages*/
+            #accessContentPages a{
+                display:inline;
+                padding:10px;
+                background-color:rgb(6, 6, 88);
+                color:white;
+                border-radius:10px;
+                margin-left: 10px;
+            }
+
+            #contentPagesbuttons{
+                text-align:center;
+            }
+            .mainimage{ /*main image adjustment*/
+                margin: 5px;
+                width: auto;
+                height: auto;
+                  
+            }
+            h1{/*heading alignment*/
+                display: inline;
+                margin: 160px;
+            }
+            .image-info {/*iamge*/
+                width: 300px;
+                height: 300px;
+                border:2px solid #3B3B3B;
+                border-radius: 10px;
+                
+            }
+            .imagepluspara{/*to display the image and para besides*/
+                display: flex;
+                justify-content: space-between;
+                margin: 5px;
+                gap: 20px;
+            }
+            .paragraph p{/*paragraph adjustment*/
+                font-size: 18px;
+                line-height: 1.4;
+                text-align: justify;
+                color: #222;
+            }
+            .keyfact-container{/*adjust the entire key and global facts part*/
+                display: flex;
+                gap: 20px;
+                margin-top: 20px;
+            }
+            .keyandfact{ /*adjust the key stats  and global part separtely part*/
+                border: 2px solid #3B3B3B;
+                padding: 20px;
+                box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .keyandfact:hover{
+                transform: translateY(-5px);
+                box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+            }
+            
+            .keyandfact h3{ /*adjust the h3*/
+                color: blue;
+                margin: 5px;
+                padding-left:5px ;
+                font-size: 22px;
+            }
+            .keyandfact ul{
+                padding-left:20px ;
+            }
+            /*adjust list items */
+            .keyandfact li{
+                font-size: 18px;
+                line-height: 1.2;
+            }
+            .title1{
+                border: 1px solid brown;
+            }
+            /*Mobile responsiveness*/
+            /*hide checkbox*/
+            #title-button{ 
+                display: none;
+            }
+            /*hide the title icon from the desktopview*/
+            .title-button{
+                display: none;
+                font-size: 19px;
+                color: #CFCFCF;
+                padding: 10px;
+            }
+            @media(max-width: 865.50px){
+                #sectionTitle {/*desktop view title section hiding method*/
+                    display: none;
+                    flex-direction: column;
+                    background-color: #030929;
+                    text-align: left;
+                    border: 1px solid white ;
+                    border-radius: 8px;
+                    overflow: hidden;/*Hide everything which goes beyond the box*/
+                    margin-top: 10px;
+                }
+                .title-button {/*button behaviour*/
+                    display: block;
+                    margin-left: 10px;
+                    width: fit-content; /*fit to the given space*/
+                }
+                #title-button:checked + .title-button + #sectionTitle  {
+                    display:inline-flex; /*to make the title bar*/
+                    
+                }
+                #sectionTitle a {/*title part after the mobile responsiveness*/
+                    display:block;
+                    width: 100%;
+                    padding: 12px 15px;
+                    border-top: 1px solid rgba(255,255,255,0.2);
+                }
+                .sidebar{ /*side bar changes*/
+                    position: fixed;
+                    left: 0px;
+                    top: 95px;
+                    width: 70px;
+                    height: auto;
+                    
+                }
+                
+                .mainimage{/*image responsiveness*/
+                    width: 100%;
+                    height: auto;
+                }
+
+                .image-info{/*sub images responsiveness*/
+                    width: 100%;
+                    max-width: 300px;
+                    height: auto;
+                }
+                h1{/*reducing h1 margins*/
+                    display: block;
+                    margin: 20px;
+                    text-align: center;
+                }
+                .imagepluspara,/*changing the containers*/
+                .keyfact-container{
+                    flex-direction:column;
+                }
+                .content1{
+                    display:contents;
+                }
+                  .paragraph p{
+                    font-size: 21px;
+                }
+                .keyandfact li{
+                    font-size: 20px;
+                }
+                .keyandfact h3{
+                    font-size: 26px;
+                }
+
+            }
+
+
+
+        </style>
+    </head>
+<body>
+    <header  id="top">
+        <nav class="nav">
+                        <div id="logo"><!--ID for logo-->
+                            <img src="images/Logo.jpeg" width="75" height="70" alt="image of the logo"><!--Add the image--> 
+                            <span class="logo-text">Learn-Scape</span> <!--Used span becaause of this wording is a inline thing--> </div>
+                            <input type="checkbox" id="menu-button"> <!--Hidden checkbox im using this to open and close the mobile navigation menu -->
+                            <label for="menu-button" class="menu-button">&#9776;</label> <!--Menu button-->
+                            <div class="navigation"> <!--navigation bar-->
+
+                                
+                                <a href="home.html">Home</a><!--Home Tab-->
+                                <a href="ais.html">Simulator</a><!--Simulator Tab-->
+                                <a href="gallery.html">Gallery</a><!--Gallery tab-->
+                                <a href="profile.html" >Profile</a><!--Profile tab-->
+                                <a href="feedback.html">Feeback</a><!--Feedback tab-->
+                                <a href="team.html">Team</a>  <!--Team tab-->
+                                <a href="sitemap.html">SiteMap</a>  <!--Sitemap tab-->
+                            </div>
+                                   
+        </nav>
+    </header>
+        <main>
+            <div  class="sidebar">
+                <input type="checkbox" id="title-button"> <!--Hidden checkbox im using this to open and close the mobile navigation menu -->
+                <label for="title-button" class="title-button">&#9776;</label> <!--Menu button-->
+                <div id="sectionTitle"> 
+                        <a href="#title1">Introduction</a><br>
+                        <a href="#title2">Obstacles to EDU</a><br>
+                        <a href="#title3">Equity In Edu </a><br>  
+                        <a href="#title4">Support Systems</a><br>
+                        <a href="#title5">Student Action</a><br>
+        
+                </div>
+            </div>
+
+            
+<!--Main Part -->  
+            <br>
+            <h1>Equal Education opportunities</h1> <!--Main heading -->  
+            <br>
+            <br>
+        <div class="content1">
+                 <!--Main Image -->  
+                <img src="images/EqualEducationopportunities.png" class="mainimage" alt="early_childhood_education">
+                <br>
+                <br>
+                
+                        
+
+   
+                <!--1st Problem -->
+                <section id="title1">                        
+                    <h2>1. What is Equal Access to Education</h2><br>
+
+                <div class="imagepluspara">   <!--this was used to make them into same row -->  
+                    <div>
+                        <img src="images/equal_aspectimages.jpg" class="image-info" alt="What_is_Equal_Access_to_Education">
+                    </div>
+                        <div class="paragraph"> <!--To edit the paragrahp -->  
+                        <p>Equal access to education means that every individual has the right to receive quality education without facing discrimination based on gender, 
+                            income, location, disability, or social background. 
+                            It ensures that all learners are given the same opportunities to attend school, participate in learning activities, 
+                            and achieve academic success.
+                            <br>
+                            <br>
+                            Education is considered a fundamental human right because it empowers individuals with knowledge, skills, and confidence. 
+                            When education is accessible to everyone, it helps reduce inequality, improve living standards, and create a more just and inclusive society. 
+                            Equal access also promotes social mobility, allowing individuals from disadvantaged backgrounds to improve their future.
+                            <br>
+                            <br>
+                            In today's world, equal education also includes access to digital learning resources, technology, and modern teaching methods, which are essential for preparing students for global challenges.
+                        </p>
+                        </div>
+                </div>
+
+                        <div class="keyfact-container"><!--to adjust the display setting -->  
+                            <div class="keyandfact">
+                                <h3>Key Statistics</h3>
+                                <ul>
+                                    <li>Around 244 million children and youth worldwide are out of school (UNESCO).</li>
+                                    <li>Only about 6 in 10 young people globally complete secondary education.</li>
+                                </ul>
+                            </div>
+
+                            <div class="keyandfact">
+                                <h3>Global Fact</h3>
+                                <ul>
+                                    <li>
+                                        The United Nations Sustainable Development Goal 4 (SDG 4)
+                                        aims to ensure inclusive and equitable quality education for all by 2030.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+    
+    
+                </section>
+                <br>
+                <br>
+      
+                <!--2nd -->
+                <section id="title2">      
+         
+                    <h2>2. Barriers to Education Around the World</h2><br>
+
+                    <div class="imagepluspara">   <!--this was used to make them into same row -->  
+                        <div>
+                            <img src="images/barrierstoedu.jpg" class="image-info" alt="barriers_to_education">
+                        </div>
+                            <div class="paragraph"> <!--To edit the paragrahp -->  
+                            <p>Despite global efforts, many children still face significant barriers to education. One of the most common barriers is poverty.
+                                Families with limited income may not be able to afford school fees, uniforms, books, or transportation.
+                                As a result, children are often forced to work instead of attending school.
+                                <br>
+                                <br>
+                        Geographical location is another major issue. In rural or remote areas, schools may be far away or completely unavailable. 
+                        Lack of infrastructure, such as proper classrooms and trained teachers, also affects the quality of education.
+                                <br>
+                                <br>
+                        Additionally, conflicts, natural disasters, and political instability disrupt education systems in many countries. Children living in these conditions 
+                        often miss years of schooling. Social and cultural factors, including discrimination and traditional beliefs, can also prevent certain groups from accessing education.
+                        These barriers highlight the need for global efforts to ensure that education is accessible and inclusive for all.
+                            </p> 
+                        </div>
+                    </div>
+
+                            <div class="keyfact-container"><!--to adjust the display setting -->  
+                                <div class="keyandfact">
+                                    <h3>Key Statistics</h3>
+                                    <ul>
+                                        <li>About 70% of out-of-school children live in low-income countries.</li>
+                                        <li>In some regions, children in rural areas are twice as likely to miss school compared to urban areas.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="keyandfact">
+                                    <h3>Global Fact</h3>
+                                    <ul>
+                                        <li>
+                                            In conflict-affected countries, <br>
+                                            children are more than twice as likely to be out of school compared to those in peaceful regions.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        
+                        <br>
+            
+                </section> 
+                <br>
+                <br>
+                <section id="title3">
+        
+                    <h2>3. Gender Equality in Education</h2><br>
+
+                        <div class="imagepluspara">   <!--this was used to make them into same row -->  
+                            <div>
+                                <img src="images/gender_equality_in_edu.jpg" class="image-info" alt="gender_equality_in_edu">
+                            </div>
+                                <div class="paragraph"> <!--To edit the paragrahp -->  
+                                <p>Gender equality in education means providing equal learning opportunities for both boys and girls.
+                                    While progress has been made, gender inequality still exists in many parts of the world. Girls, 
+                                    in particular, face challenges such as early marriage, household responsibilities,
+                                    and safety concerns when traveling to school.
+                                    <br>
+                                    <br>
+                                    Cultural beliefs and societal expectations sometimes prioritize boys education over girls,
+                                    limiting opportunities for female students. 
+                                    This results in lower enrollment and completion rates for girls in some regions.
+                                    <br>
+                                    <br>
+                                    Promoting gender equality in education is essential because it leads to positive social and economic outcomes. 
+                                    Educated women are more likely to participate in the workforce, make informed decisions, 
+                                    and contribute to their communities. Furthermore, educating girls has a direct impact on improving family health, 
+                                    reducing poverty, and supporting sustainable development.
+                                    <br>
+                                    <br>
+                                    Ensuring gender equality requires supportive policies, safe learning environments, 
+                                    and awareness programs that encourage equal participation in education.
+                                    </p>
+                            </div>
+                        </div>
+
+                                <div class="keyfact-container"><!--to adjust the display setting -->  
+                                    <div class="keyandfact">
+                                        <h3>Key Statistics</h3>
+                                        <ul>
+                                            <li>Around 129 million girls worldwide are out of school.</li>
+                                            <li>In some countries, girls are less likely to complete secondary education than boys.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="keyandfact">
+                                        <h3>Global Fact</h3>
+                                        <ul>
+                                            <li>
+                                                Educating girls can increase a country's economic growth and reduce poverty,<br>
+                                                as educated women are more likely to work and support their families.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            <br>    
+                </section>           
+                    <br>
+                    <br>
+    
+    
+                <section id="title4">
+                    <h2>4. How Scholarships and Community Support Help</h2><br>
+
+                        <div class="imagepluspara">   <!--this was used to make them into same row -->  
+                            <div>
+                                <img src="images/schols.jpg" class="image-info" alt="how_scholarship_help_student">
+                            </div>
+                                <div class="paragraph"> <!--To edit the paragrahp -->  
+                                <p>Scholarships and community support play a crucial role in reducing educational inequality. Scholarships provide 
+                                    financial assistance to students who cannot afford education, allowing them to continue their studies without economic 
+                                    pressure. 
+                                    These programs help talented students achieve their goals regardless of their financial situation.
+                                    <br>
+                                    <br>
+                                    Community support initiatives, such as building schools, donating educational materials, and organizing awareness campaigns, 
+                                    also improve access to education.
+                                    Local communities often work together to create safe and supportive learning environments.
+                                    <br>
+                                    <br>
+                                    Non-governmental organizations (NGOs) and international agencies contribute by funding educational programs, 
+                                    training teachers, and promoting inclusive education policies. 
+                                    These efforts help bridge the gap between privileged and disadvantaged students.
+                                    <br>
+                                    <br>
+                                    Overall, scholarships and community support create opportunities, 
+                                    improve educational access, and empower individuals to build a better future.
+                                    </p>
+                            </div>
+                        </div>
+
+                                <div class="keyfact-container"><!--to adjust the display setting -->  
+                                    <div class="keyandfact">
+                                        <h3>Key Statistics</h3>
+                                        <ul>
+                                            <li>Scholarship programs have helped increase school enrollment in some regions by up to 30%.</li>
+                                            <li>Community-based education programs can significantly improve attendance in rural areas.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="keyandfact">
+                                        <h3>Global Fact</h3>
+                                        <ul>
+                                            <li>
+                                                Organizations like NGOs and local communities help build schools, provide books,<br>
+                                                and train teachers in developing countries.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            
+                    </section>
+                        <br>
+                        <br>
+    
+ 
+
+                    <section id="title5">
+                            <h2>5. Actions Students Can Take</h2><br>
+
+                            <div class="imagepluspara">   <!--this was used to make them into same row -->  
+                                    <div>
+                                        <img src="images/group-creation-action.jpg" class="image-info" alt="group-creation-action">
+                                    </div>
+                                        <div class="paragraph"> <!--To edit the paragrahp -->  
+                                        <p>Students themselves can contribute to promoting equal education in many ways. One important action is 
+                                            supporting peers by sharing knowledge, helping classmates, and encouraging collaborative learning. 
+                                            This creates a positive and inclusive learning environment.
+                                            <br>
+                                            <br>
+                                            Students can also raise awareness about educational inequalities through discussions, social media, and school activities. 
+                                            Participating in community service projects, volunteering, 
+                                            and educational campaigns can help support underprivileged learners.
+                                            <br>
+                                            <br>
+                                            Additionally, students can use technology to access and share educational resources, making learning more accessible to others. 
+                                            Being respectful, inclusive, and 
+                                            supportive towards classmates from different backgrounds also plays a key role in promoting equality.
+                                            <br>
+                                            <br>
+                                            Even small actions taken by students can have a meaningful impact in creating a more fair and inclusive education system.
+                                            </p>
+                                    </div>
+                            </div>
+
+                                    <div class="keyfact-container"><!--to adjust the display setting -->  
+                                        <div class="keyandfact">
+                                            <h3>Key Statistics</h3>
+                                            <ul>
+                                                <li>Peer learning and student support programs can improve academic performance by 10-20%..</li>
+                                                <li>Youth-led awareness campaigns have increased school participation in many communities.</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="keyandfact">
+                                            <h3>Global Fact</h3>
+                                            <ul>
+                                                <li>
+                                                    Students around the world are using social media and technology to <br>
+                                                    promote education rights and support global learning initiatives.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                <br>
+                    </section>
+
+        </div> <!--This div belongs to content1 class which was in the begining-->>
+
+
+<br>            
+<br>
+            <!--Acess for other content pages-->
+            <div id="contentPagesbuttons">
+                <div id="accessContentPages">
+                    <a href="content_ST1.html">ST1</a>
+                    <a href="content_ST2.html">ST2</a>
+                    <a href="content_ST3.html">ST3</a>
+                    <a href="content_ST3.html">ST4</a>
+                </div>
+            </div>
+            
+            
+            <!--This is for "Go To Top" button-->
+           
+                <div>
+                    <span class="goToTop"><a href="#top">Go To Top</a></span>
+                </div>
+            
+            
+    </main>
+               
+            
+
+    
+    <br>
+<footer id="Footer">
+      
+        <div class="footer-container">  <!--class creating for the div tags-->
+            <div class="footer-det"> <!--class creating for the div tags-->
+                <h4>Quick Link</h4> <!--h4 for the main headings-->
+                <br>
+                <a href="validation_ST1.html">Validation Page</a> 
+                <br>
+                <br>
+                <a href="pageEditor_ST1.html">Page Editor</a>
+                <br>
+                <br>
+                <p>Accessibility</p>
+            </div>
+
+            <div class="footer-det">
+                <h4>Student Detalils</h4><!--h4 for the main headings-->
+                <br>
+                <p>Course : Web developement</p>
+                <br>
+                <br>
+                <p>University of WestMinster</p>
+                <br>
+                <br>
+                <p>Year 2026</p>
+            </div>
+
+            <div class="footer-det">
+                <h4>Compliance</h4><!--h4 for the main headings-->
+                <br>
+                <br>
+                <p>WCAG 2.1 AA Compliant</p>
+                <br>
+                <br>
+            <p>Accessible Design Standards</p> <!--p fo the description part-->
+            </div>
+            
+        </div>
+      
+        <br>
+        <br>
+        <hr> <!--horizontal line-->
+        <h5> copyright © Group 6 Web Developent</h5>
+
+        
+
+    </footer>
+</body>
+
+
+
+</html>   

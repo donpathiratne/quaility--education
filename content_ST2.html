@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Page 2 - Mohamed Shazan</title>
+    <link rel="stylesheet" href="Global.css">
+    <style>
+        /*This class for sidebar*/
+
+        .sidebar {
+            line-height: 3.0;
+            position: fixed;
+            width: 150px;
+            top: 95px;
+            background-color: rgb(18, 12, 44);
+            padding: 5px;
+            height: 300px;
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        /*This id for designong the sub titles of main topic*/
+        #sectionTitle a {
+            font-size: 18px;
+            color: white;
+        }
+
+        /*add hover affect to sub titles*/
+        #sectionTitle a:hover {
+            background-color: rgb(214, 14, 14);
+            color: white;
+        }
+
+        /*This is for content related to sub titles*/
+        .content2 {
+            margin-left: 170px;
+            padding: 20px;
+            background-color: #F5F5F4;
+            border: 1px solid black;
+        }
+
+        /*This is for Go To Top button decoration*/
+        .goToTop a {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgb(255, 0, 0);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /*acess to other content pages*/
+        #accessContentPages a {
+            display: inline;
+            padding: 10px;
+            background-color: rgb(6, 6, 88);
+            color: white;
+            border-radius: 10px;
+            margin-left: 10px;
+        }
+
+        #contentPagesbuttons {
+            text-align: center;
+        }
+
+        .mainimage {
+            /*main image adjustment*/
+            margin: 5px;
+            width: 100%;
+            max-width: 100%;
+            height: 300px;
+            display: block;
+
+        }
+
+        h1 {
+            /*heading alignment*/
+            display: inline;
+            margin: 160px;
+        }
+
+        .image-info {
+            /*iamge*/
+            width: 300px;
+            height: 300px;
+            border: 2px solid #3B3B3B;
+            border-radius: 10px;
+
+        }
+
+        .imagepluspara {
+            /*to display the image and para besides*/
+            display: flex;
+            justify-content: space-between;
+            margin: 5px;
+            gap: 20px;
+        }
+
+        .paragraph p {
+            /*paragraph adjustment*/
+            font-size: 18px;
+            line-height: 1.4;
+            text-align: justify;
+            color: #222;
+        }
+
+        .keyfact-container {
+            /*adjust the entire key and global facts part*/
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .keyandfact {
+            /*adjust the key stats  and global part separtely part*/
+            border: 2px solid #3B3B3B;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .keyandfact:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+        }
+
+        .keyandfact h3 {
+            /*adjust the h3*/
+            color: blue;
+            margin: 5px;
+            padding-left: 5px;
+            font-size: 22px;
+        }
+
+        .keyandfact ul {
+            padding-left: 20px;
+        }
+
+        /*adjust list items */
+        .keyandfact li {
+            font-size: 18px;
+            line-height: 1.2;
+        }
+
+        .title1 {
+            border: 1px solid brown;
+        }
+
+        /*Mobile responsiveness*/
+        /*hide checkbox*/
+        #title-button {
+            display: none;
+        }
+
+        /*hide the title icon from the desktopview*/
+        .title-button {
+            display: none;
+            font-size: 19px;
+            color: #CFCFCF;
+            padding: 10px;
+        }
+
+        @media(max-width: 865.50px) {
+            #sectionTitle {
+                /*desktop view title section hiding method*/
+                display: none;
+                flex-direction: column;
+                background-color: #030929;
+                text-align: left;
+                border: 1px solid white;
+                border-radius: 8px;
+                overflow: hidden;
+                /*Hide everything which goes beyond the box*/
+                margin-top: 10px;
+            }
+
+            .title-button {
+                /*button behaviour*/
+                display: block;
+                margin-left: 10px;
+                width: fit-content;
+                /*fit to the given space*/
+            }
+
+            #title-button:checked+.title-button+#sectionTitle {
+                display: inline-flex;
+                /*to make the title bar*/
+
+            }
+
+            #sectionTitle a {
+                /*title part after the mobile responsiveness*/
+                display: block;
+                width: 100%;
+                padding: 12px 15px;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .sidebar {
+                /*side bar changes*/
+                position: fixed;
+                left: 0px;
+                top: 95px;
+                width: 70px;
+                height: auto;
+
+            }
+
+            .mainimage {
+                /*image responsiveness*/
+                width: 100%;
+                height: auto;
+            }
+
+            .image-info {
+                /*sub images responsiveness*/
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+            }
+
+            h1 {
+                /*reducing h1 margins*/
+                display: block;
+                margin: 20px;
+                text-align: center;
+            }
+
+            .imagepluspara,
+            /*changing the containers*/
+            .keyfact-container {
+                flex-direction: column;
+            }
+
+            .content2 {
+                display: contents;
+                margin-left: 0;
+                max-width: 100%;
+                padding: 15px;
+            }
+
+            .paragraph p {
+                font-size: 21px;
+            }
+
+            .keyandfact li {
+                font-size: 20px;
+            }
+
+            .keyandfact h3 {
+                font-size: 26px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header id="top">
+        <nav class="nav">
+            <div id="logo"><!--ID for logo-->
+                <img src="images/Logo.jpeg" width="75" height="70" alt="image of the logo"><!--Add the image-->
+                <span class="logo-text">Learn Scape</span>
+                <!--Used span becaause of this wording is a inline thing-->
+            </div>
+            <input type="checkbox" id="menu-button">
+            <!--Hidden checkbox im using this to open and close the mobile navigation menu -->
+            <label for="menu-button" class="menu-button">&#9776;</label> <!--Menu button-->
+            <div class="navigation"> <!--navigation bar-->
+
+                <a href="home.html">Home</a><!--Home Tab-->
+                <a href="ais.html">Simulator</a><!--Simulator Tab-->
+                <a href="gallery.html">Gallery</a><!--Gallery tab-->
+                <a href="profile.html">Profile</a><!--Profile tab-->
+                <a href="feedback.html">Feeback</a><!--Feedback tab-->
+                <a href="team.html">Team</a> <!--Team tab-->
+                <a href="sitemap.html">SiteMap</a> <!--Sitemap tab-->
+            </div>
+
+        </nav>
+    </header>
+    <main>
+        <div class="sidebar">
+            <input type="checkbox" id="title-button">
+            <!--Hidden checkbox im using this to open and close the mobile navigation menu -->
+            <label for="title-button" class="title-button">&#9776;</label> <!--Menu button-->
+            <div id="sectionTitle">
+                <a href="#title1">Online</a><br>
+                <a href="#title2">Tools</a><br>
+                <a href="#title3">Benefits</a><br>
+                <a href="#title4">Challenges</a><br>
+                <a href="#title5">Future</a><br>
+
+            </div>
+        </div>
+
+
+        <!--Main Part -->
+        <br>
+        <h1>Digital Learning: The Future of Education</h1> <!--Main heading -->
+        <br>
+        <br>
+        <div class="content2">
+            <!--Main Image -->
+            <!-- Image source: [Student using laptop for online learning], taken by [me] -->
+            <img src="images/content2_image1.jpg" class="mainimage" alt="Student using laptop for online learning">
+
+            <br>
+            <br>
+
+            <div id="title1">
+                <!--1st Problem -->
+
+                <h2>1. Rise of Online Learning</h2><br>
+
+                <div class="imagepluspara"> <!--this was used to make them into same row -->
+                    <div>
+                        <!-- Image source: [Student attending an online class on laptop], taken by [me] -->
+                        <img src="images/content2_image2.jpg" class="image-info"
+                            alt="Student attending an online class on laptop">
+                    </div>
+                    <div class="paragraph"> <!--To edit the paragrahp -->
+                        <p>Online learning has completely transformed the way people access education around the world.
+                            What once required physical attendance in a classroom can now be done from the comfort of
+                            a bedroom, a library, or even a coffee shop. This shift has opened doors for millions of
+                            students who previously had no access to quality education due to geographic, financial,
+                            or physical barriers.
+                            <br>
+                            <br>
+                            Platforms like Coursera, Khan Academy, and edX now offer thousands of courses across every
+                            subject imaginable — completely free or at a fraction of the cost of traditional education.
+                            Universities around the world have partnered with these platforms to offer accredited
+                            degrees
+                            online, allowing working adults, parents, and people in remote areas to earn qualifications
+                            without disrupting their lives.
+                            <br>
+                            <br>
+                            The COVID-19 pandemic accelerated this shift dramatically. Schools and universities were
+                            forced to move online almost overnight, and in doing so, proved that effective learning
+                            can happen outside the traditional classroom. Even after the pandemic, many institutions
+                            have kept hybrid or fully online options as a permanent part of their offering.
+                            <br>
+                            <br>
+                            Online learning is not just a convenience — it is a powerful equaliser that is helping
+                            close the global education gap one course at a time.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="keyfact-container"><!--to adjust the display setting -->
+                    <div class="keyandfact">
+                        <h3>Key Statistics</h3>
+                        <ul>
+                            <li>Over 220 million students enrolled in online courses globally in 2023.</li>
+                            <li>The e-learning market is expected to reach $375 billion by 2026.</li>
+                        </ul>
+                    </div>
+
+                    <div class="keyandfact">
+                        <h3>Global Fact</h3>
+                        <ul>
+                            <li>
+                                During the COVID-19 pandemic, over 1.6 billion students were affected by school
+                                closures,
+                                pushing online learning to the forefront of global education.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <br>
+            <br>
+            <!--2ndProblem -->
+            <div id="title2">
+                <h2>2. Tools That Transform Education</h2><br>
+
+                <div class="imagepluspara"> <!--this was used to make them into same row -->
+                    <div>
+                        <!-- Image source: [Student using a tablet and AI tools for learning], taken by [me] -->
+                        <img src="images/content2_image3.jpg" class="image-info"
+                            alt="Student using a tablet and AI tools for learning">
+                    </div>
+                    <div class="paragraph"> <!--To edit the paragrahp -->
+                        <p>A wide range of digital tools are now being used in classrooms and homes to make learning
+                            more effective, engaging, and personalised. From interactive whiteboards to artificial
+                            intelligence, technology is reshaping how teachers teach and how students learn.
+                            <br>
+                            <br>
+                            Artificial Intelligence (AI) is one of the most exciting tools entering education.
+                            AI-powered
+                            platforms can analyse a student's strengths and weaknesses and create a personalised
+                            learning
+                            path tailored to their specific needs. Tools like Duolingo use AI to adapt language lessons
+                            in real time based on how the student is performing.
+                            <br>
+                            <br>
+                            E-learning platforms like Google Classroom, Microsoft Teams for Education, and Moodle help
+                            teachers organise lessons, share materials, set assignments, and give feedback — all in one
+                            digital space. These tools reduce administrative workload and allow teachers to focus more
+                            on actual teaching.
+                            <br>
+                            <br>
+                            Virtual Reality (VR) and Augmented Reality (AR) are also starting to appear in schools,
+                            allowing students to take virtual field trips, explore historical events, or conduct science
+                            experiments in a safe, simulated environment.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="keyfact-container"><!--to adjust the display setting -->
+                    <div class="keyandfact">
+                        <h3>Key Statistics</h3>
+                        <ul>
+                            <li>AI in education is projected to grow to a $20 billion industry by 2027.</li>
+                            <li>Students using adaptive learning technology show up to 30% improvement in performance.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="keyandfact">
+                        <h3>Global Fact</h3>
+                        <ul>
+                            <li>
+                                Google Classroom alone serves over 170 million students and teachers worldwide,
+                                making it one of the most widely used educational tools on the planet.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <br>
+            </div>
+            <br>
+            <br>
+            <div id="title3">
+                <h2>3. Benefits of Digital Education</h2><br>
+
+                <div class="imagepluspara"> <!--this was used to make them into same row -->
+                    <div>
+                        <!-- Image source: [Students collaborating digitally on laptops], taken by [me] -->
+                        <img src="images/content2_image4.jpg" class="image-info"
+                            alt="Students collaborating digitally on laptops">
+                    </div>
+                    <div class="paragraph"> <!--To edit the paragrahp -->
+                        <p>Digital education offers a wide range of benefits that go far beyond simple convenience.
+                            It has the potential to make high-quality learning accessible to anyone, anywhere,
+                            regardless of their background or circumstances.
+                            <br>
+                            <br>
+                            One of the biggest benefits is flexibility. Students can learn at their own pace, revisit
+                            difficult topics, and fit their studies around work, family, or other commitments. This is
+                            particularly valuable for adult learners who are returning to education after a break.
+                            <br>
+                            <br>
+                            Digital education also tends to be more cost-effective than traditional education. Many
+                            high-quality online courses are free or low-cost, and students save money on commuting,
+                            accommodation, and physical materials. This makes education more affordable and reduces
+                            financial barriers to learning.
+                            <br>
+                            <br>
+                            Additionally, digital platforms provide access to a global community of learners and
+                            educators. Students can collaborate with peers from different countries, gain diverse
+                            perspectives, and build international networks that can be valuable in their careers.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="keyfact-container"><!--to adjust the display setting -->
+                    <div class="keyandfact">
+                        <h3>Key Statistics</h3>
+                        <ul>
+                            <li>Online learners retain 25-60% more material compared to traditional classroom learning.
+                            </li>
+                            <li>Digital education reduces learning time by up to 40-60% compared to face-to-face
+                                learning.</li>
+                        </ul>
+                    </div>
+
+                    <div class="keyandfact">
+                        <h3>Global Fact</h3>
+                        <ul>
+                            <li>
+                                Studies show that students in blended learning environments — combining online and
+                                in-person teaching — consistently outperform students in fully traditional classrooms.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <br>
+            <br>
+
+            <div id="title4">
+                <h2>4. Challenges of the Digital Divide</h2><br>
+
+                <div class="imagepluspara"> <!--this was used to make them into same row -->
+                    <div>
+                        <!-- Image source: [Child without access to digital devices for learning], taken by [me] -->
+                        <img src="images/content2_image5.jpg" class="image-info"
+                            alt="Child without access to digital devices for learning">
+                    </div>
+                    <div class="paragraph"> <!--To edit the paragrahp -->
+                        <p>Despite the many benefits of digital education, a significant challenge remains — the
+                            digital divide. This refers to the gap between those who have access to technology and
+                            the internet, and those who do not. This divide is most visible between wealthy and
+                            lower-income communities, and between developed and developing countries.
+                            <br>
+                            <br>
+                            In many parts of the world, students simply do not have access to a computer, tablet,
+                            or reliable internet connection. Without these basic tools, they cannot participate in
+                            online learning and are left further behind as the world increasingly moves digital.
+                            Even in developed countries like the UK and USA, millions of low-income students lack
+                            sufficient internet access at home.
+                            <br>
+                            <br>
+                            There is also a skills gap to consider. Even when devices are available, some students
+                            and teachers lack the digital literacy skills needed to use them effectively. This can
+                            limit the impact of even the best educational technology.
+                            <br>
+                            <br>
+                            Addressing the digital divide requires investment from governments, NGOs, and private
+                            organisations to provide affordable devices, internet infrastructure, and digital skills
+                            training — ensuring that technology truly benefits all learners equally.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="keyfact-container"><!--to adjust the display setting -->
+                    <div class="keyandfact">
+                        <h3>Key Statistics</h3>
+                        <ul>
+                            <li>Approximately 2.9 billion people globally still have no access to the internet.</li>
+                            <li>In low-income countries, only 1 in 3 students has access to a computer at home. </li>
+                        </ul>
+                    </div>
+
+                    <div class="keyandfact">
+                        <h3>Global Fact</h3>
+                        <ul>
+                            <li>
+                                Scholarship programs have helped increase school enrollment in some regions by up to
+                                30%.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+            <br>
+
+
+            <div id="title5">
+
+                <h2>5. Future of Smart Learning</h2><br>
+
+                <div class="imagepluspara"> <!--this was used to make them into same row -->
+                    <div>
+                        <!-- Image source: [Futuristic smart classroom with technology ], taken by [me] -->
+                        <img src="images/content2_image6.jpg" class="image-info"
+                            alt="Futuristic smart classroom with technology">
+                    </div>
+                    <div class="paragraph"> <!--To edit the paragrahp -->
+                        <p>The future of education is set to be smarter, more personalised, and more connected than
+                            ever before. Emerging technologies are already beginning to redefine what a classroom
+                            looks like and how students interact with knowledge.
+                            <br>
+                            <br>
+                            Smart classrooms equipped with interactive displays, IoT (Internet of Things) sensors,
+                            and AI assistants are already appearing in schools around the world. These environments
+                            adapt to the needs of each student, providing real-time feedback and personalised learning
+                            experiences that traditional classrooms cannot offer.
+                            <br>
+                            <br>
+                            Gamification — the use of game-like elements such as points, badges, and leaderboards in
+                            learning — is proving to be a powerful motivator for students. Platforms like Kahoot and
+                            Classcraft use gamification to make learning more engaging and enjoyable, particularly
+                            for younger students.
+                            <br>
+                            <br>
+                            Looking further ahead, technologies like brain-computer interfaces, fully immersive VR
+                            classrooms, and hyper-personalised AI tutors may one day make it possible for every
+                            student on the planet to receive a world-class education tailored entirely to them.
+                            The future of smart learning is not just exciting — it is essential for achieving
+                            true global educational equality.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="keyfact-container"><!--to adjust the display setting -->
+                    <div class="keyandfact">
+                        <h3>Key Statistics</h3>
+                        <ul>
+                            <li>The global smart education market is expected to reach $680 billion by 2027.</li>
+                            <li>Gamified learning increases student engagement by up to 60% in classroom settings.</li>
+                        </ul>
+                    </div>
+
+                    <div class="keyandfact">
+                        <h3>Global Fact</h3>
+                        <ul>
+                            <li>
+                                Countries like South Korea and Estonia are already integrating AI-driven personalised
+                                learning into their national education systems as a standard part of schooling.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <br>
+
+            </div>
+            <br>
+
+        </div>
+
+
+
+        <br>
+        <!--Acess for other content pages-->
+        <div id="contentPagesbuttons">
+            <div id="accessContentPages">
+                <a href="content_ST1.html">ST1</a>
+                <a href="content_ST2.html">ST2</a>
+                <a href="content_ST3.html">ST3</a>
+                <a href="content_ST4.html">ST4</a>
+            </div>
+        </div>
+
+
+        <!--This is for "Go To Top" button-->
+
+        <div>
+            <span class="goToTop"><a href="#top">Go To Top</a></span>
+        </div>
+
+
+    </main>
+
+
+
+
+    <br>
+    <footer id="Footer">
+
+        <div class="footer-container"> <!--class creating for the div tags-->
+            <div class="footer-det"> <!--class creating for the div tags-->
+                <h4>Quick Link</h4> <!--h4 for the main headings-->
+                <br>
+                <a href="validation_ST2.html">Validation Page</a>
+                <br>
+                <br>
+                <a href="pageEditor_ST2.html">Page Editor</a>
+                <br>
+                <br>
+                <p>Accessbility</p>
+
+            </div>
+
+            <div class="footer-det">
+                <h4>Student Detalils</h4><!--h4 for the main headings-->
+                <br>
+                <p>Course : Web developement</p>
+                <br>
+                <br>
+                <p>University of WestMinster</p>
+                <br>
+                <br>
+                <p>Year 2026</p>
+            </div>
+
+            <div class="footer-det">
+                <h4>Compliance</h4><!--h4 for the main headings-->
+                <br>
+                <br>
+                <p>WCAG 2.1 AA Compliant</p>
+                <br>
+                <br>
+                <p>Accessible Design Standards</p> <!--p fo the description part-->
+            </div>
+
+        </div>
+
+        <br>
+        <br>
+        <hr> <!--horizontal line-->
+        <h5> copyright © Group 6 Web Developent</h5>
+
+    </footer>
+</body>
+
+
+
+</html>
