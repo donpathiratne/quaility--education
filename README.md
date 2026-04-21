@@ -1,2 +1,7 @@
 # quaility--education
-This is a web project of Quality education
+This is a group web project of Quality education
+
+# languages
+HTML
+CSS
+Javascript
